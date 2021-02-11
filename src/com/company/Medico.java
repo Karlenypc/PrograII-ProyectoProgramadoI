@@ -1,20 +1,20 @@
 package com.company;
 
-public class RegistroMedico {
+public class Medico {
 
     public String nombre;
-    public String cedula;
+    public String id;
     public String email;
     public String especialidad;
     // foto del medico?
     // eslogan del medico
     public String[] centrosMedicos;
-    //procedimientos que realiza?
+    Procedimientos[] procedimientosRealizados;
     public String[] idiomas;
     public String[] educacion;
     public String nombreAfiliacion;
 
-    public RegistroMedico() { }
+    public Medico() { }
 
     public String getNombre() {
         return nombre;
@@ -24,12 +24,12 @@ public class RegistroMedico {
         this.nombre = nombre;
     }
 
-    public String getCedula() {
-        return cedula;
+    public String getId() {
+        return id;
     }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -54,6 +54,14 @@ public class RegistroMedico {
 
     public void setCentrosMedicos(String[] centrosMedicos) {
         this.centrosMedicos = centrosMedicos;
+    }
+
+    public Procedimientos[] getProcedimientosRealizados() {
+        return procedimientosRealizados;
+    }
+
+    public void setProcedimientosRealizados(Procedimientos[] procedimientosRealizados) {
+        this.procedimientosRealizados = procedimientosRealizados;
     }
 
     public String[] getIdiomas() {
