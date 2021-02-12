@@ -1,18 +1,21 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Clinica {
 
-    String name;
-    String address[][] = new String[4][4];
-    // posicion 1 0 = direccion general
-    // posicion 2 0 = distrito
-    // posicion 3 0 = canton
-    // posicion 4 0 = provincia
+    private String name;
+    private ArrayList<String> direccion = new ArrayList<String>();
+    private int number;
 
-
-    public Clinica(String name, String[][] address) {
+    public Clinica(String name, ArrayList<String> direccion, int number) {
         this.name = name;
-        this.address = address;
+        this.direccion = direccion;
+        this.number = number;
+    }
+
+    public Clinica() {
+
     }
 
     public String getName() {
@@ -23,11 +26,20 @@ public class Clinica {
         this.name = name;
     }
 
-    public String[][] getAddress() {
-        return address;
+    public ArrayList<String> getDireccion() {
+        return direccion;
     }
 
-    public void setAddress(String[][] address) {
-        this.address = address;
+    public void setDireccion(ArrayList<String> direccion) {
+        this.direccion = direccion;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 }
+
