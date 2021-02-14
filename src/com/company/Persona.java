@@ -1,11 +1,11 @@
 package com.company;
 
 public class Persona {
-    private String name;
-    private String apellido;
+    public String name;
+    public String apellido;
     private String id;
     private String email;
-    private int edad;
+    public int edad;
 
     public Persona(String name, String apellido, String id, String email, int edad) {
         this.name = name;
@@ -14,7 +14,8 @@ public class Persona {
         this.email = email;
         this.edad = edad;
     }
-    public Persona(){
+
+    public Persona() {
 
     }
 

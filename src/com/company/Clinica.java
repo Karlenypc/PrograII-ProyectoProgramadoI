@@ -4,26 +4,20 @@ import java.util.ArrayList;
 
 public class Clinica {
 
-    private String name;
-    private ArrayList<String> direccion = new ArrayList<String>();
+    private ArrayList<String> nombreClinica = new ArrayList<>();
+    private ArrayList<String> direccion = new ArrayList<>();
     private int number;
 
-    public Clinica(String name, ArrayList<String> direccion, int number) {
-        this.name = name;
-        this.direccion = direccion;
-        this.number = number;
-    }
 
     public Clinica() {
-
     }
 
-    public String getName() {
-        return name;
+    public ArrayList<String> getNombreClinica() {
+        return nombreClinica;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombreClinica(ArrayList<String> nombreClinica) {
+        this.nombreClinica = nombreClinica;
     }
 
     public ArrayList<String> getDireccion() {
@@ -42,4 +36,6 @@ public class Clinica {
         this.number = number;
     }
 }
+
+
 
