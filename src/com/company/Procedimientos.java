@@ -1,9 +1,12 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Procedimientos {
 
     String nombre;
     double costo;
+    ArrayList<Procedimientos> listaProcedimientos = new ArrayList<>();
 
     public Procedimientos(String nombre, double costo) {
         this.nombre = nombre;

@@ -1,5 +1,6 @@
 package com.company;
 
+//clase se utiliza como superclase de la sub clase Medico y Paciente
 public class Persona {
     public String name;
     public String apellido;
