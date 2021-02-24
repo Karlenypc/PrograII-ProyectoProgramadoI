@@ -9,31 +9,8 @@ public class Clinica {
     private String canton;
     private String distrito;
     private String provincia;
-    public ArrayList<Clinica> nombreClinica = new ArrayList<>();
     private int number;
 
-
-    public Clinica(String nombre) {
-        this.nombre = nombre;
-    }
-
-    //Registro de Clinicas
-    public void datosLista() {
-        nombreClinica.add(new Clinica("Clinica Paraiso", "Avenida Segunda, Nº1234", 23456532, " ", " ", ""));
-        nombreClinica.add(new Clinica("Clinica 1", "Avenida 1, Nº1234", 23456532, " ", " ", ""));
-        nombreClinica.add(new Clinica("Clinica 2", "Avenida 2, Nº1234", 23456532, " ", " ", ""));
-        nombreClinica.add(new Clinica("Clinica 3", "Avenida 3, Nº1234", 23456532, " ", " ", ""));
-        nombreClinica.add(new Clinica("Clinica 4", "Avenida 4, Nº1234", 23456532, " ", " ", ""));
-        nombreClinica.add(new Clinica("Clinica 5", "Avenida 5, Nº1234", 23456532, " ", " ", ""));
-    }
-    //Metodo para agregar una clinica al registro
-    public void agregarClinica(){
-
-    }
-    // Metodo para borrar registro
-    public void borrarClinica(){
-
-    }
 
     public Clinica(String nombre, String direccion, int number, String canton, String distrito, String provincia) {
         this.nombre = nombre;
@@ -58,14 +35,6 @@ public class Clinica {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
-    }
-
-    public ArrayList<Clinica> getNombreClinica() {
-        return nombreClinica;
-    }
-
-    public void setNombreClinica(ArrayList<Clinica> nombreClinica) {
-        this.nombreClinica = nombreClinica;
     }
 
     public String getCanton() {
