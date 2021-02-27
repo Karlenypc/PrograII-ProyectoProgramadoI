@@ -5,6 +5,14 @@
  */
 package View;
 
+import java.awt.Image;
+import java.io.File;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author Karlenypc
@@ -57,11 +65,12 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_correoElectronico = new javax.swing.JLabel();
         jLabel_tipoPadecimiento = new javax.swing.JLabel();
         jComboBox_nombrePadecimiento = new javax.swing.JComboBox<>();
-        jLabel13 = new javax.swing.JLabel();
+        ibiFoto = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel_nombre = new javax.swing.JLabel();
         jComboBox_tipoPadecimiento = new javax.swing.JComboBox<>();
+        btnCargarFoto = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -480,10 +489,10 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel1_RegistroUsuarios.add(jComboBox_nombrePadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 230, 30));
 
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("FOTO???!");
-        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1_RegistroUsuarios.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 170, 200));
+        ibiFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ibiFoto.setText("FOTO");
+        ibiFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1_RegistroUsuarios.add(ibiFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 170, 200));
 
         jTextArea1.setBackground(new java.awt.Color(231, 229, 218));
         jTextArea1.setColumns(20);
@@ -510,6 +519,14 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
         jPanel1_RegistroUsuarios.add(jComboBox_tipoPadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 230, 30));
+
+        btnCargarFoto.setText("jButton1");
+        btnCargarFoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarFotoActionPerformed(evt);
+            }
+        });
+        jPanel1_RegistroUsuarios.add(btnCargarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 120, 30));
 
         jPanel_Central.add(jPanel1_RegistroUsuarios, "card2");
 
@@ -2272,6 +2289,29 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel3_clinica4.setVisible(true);
     }//GEN-LAST:event_jButton_VisualizarClinica4ActionPerformed
 
+    // BOTON CARGAR FOTO 
+    File fichero;
+    private void btnCargarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarFotoActionPerformed
+        int resultado;
+        CargarFoto ventana = new CargarFoto();
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("JPG y PNG", "jpg", "png");
+        ventana.jhCargarFoto.setFileFilter(filtro);
+        resultado = ventana.jhCargarFoto.showOpenDialog(null);
+        if (JFileChooser.APPROVE_OPTION == resultado) {
+            fichero = ventana.jhCargarFoto.getSelectedFile();
+            try {
+                ImageIcon icon = new ImageIcon(fichero.toString());
+                Icon icono = new ImageIcon(icon.getImage().getScaledInstance(ibiFoto.getWidth(), ibiFoto.getHeight(), Image.SCALE_DEFAULT));
+                ibiFoto.setText(null);
+                ibiFoto.setIcon(icono);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error abriendo la imagen " + ex);
+
+            }
+        }
+
+    }//GEN-LAST:event_btnCargarFotoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2308,12 +2348,14 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCargarFoto;
     private javax.swing.JButton btnCita;
     private javax.swing.JButton btnClinica;
     private javax.swing.JButton btnMedico;
     private javax.swing.JButton btnPaciente;
     private javax.swing.JButton btnProcedimiento;
     private javax.swing.JButton btnRegistro;
+    private javax.swing.JLabel ibiFoto;
     private javax.swing.JButton jButton_VisualizarClinica1;
     private javax.swing.JButton jButton_VisualizarClinica2;
     private javax.swing.JButton jButton_VisualizarClinica3;
@@ -2325,7 +2367,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox_nombrePadecimiento;
     private javax.swing.JComboBox<String> jComboBox_tipoPadecimiento;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;

@@ -11,9 +11,7 @@ package View;
  */
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+   MainWindow window = new MainWindow();
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -109,7 +107,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCorreoUsuarioActionPerformed
 
     private void jButton_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_IngresarActionPerformed
-        // TODO add your handling code here:
+    window.setVisible(true);
+    jPanel1.setVisible(false);
     }//GEN-LAST:event_jButton_IngresarActionPerformed
 
     /**
