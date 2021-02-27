@@ -1,5 +1,9 @@
 package com.company;
 
+import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
+
+import javax.swing.*;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class Registros {
@@ -22,17 +26,31 @@ public class Registros {
 
     // Metodo muestra en consola los nombres de los padecimientos
     public void mostraNombrePadecimiento() {
-        for (int i = 0; i < registroPadecimiento.size(); i++) {
+        for (int i = 0; i < registroPadecimiento.size(); i++)
             System.out.println(registroPadecimiento.get(i).getNombrePadecimiento());
-        }
     }
 
+
+//        public void fichero () {
+//            // crear fichero de nombres
+//            for (int i =0; i<registroPadecimiento.size();i++){
+//            try {
+//                PrintWriter write = new PrintWriter("file.txt");
+//                write.println(registroPadecimiento.get(i).getNombrePadecimiento());
+//
+//            }
+//            catch (Exception e){
+//                System.out.println(" ");
+//            }
+//        }
+
+
     //Metodo muestra en consola el tipo de padecimiento
-    public void mostrarTipoPadecimiento() {
-        for (int i = 0; i < registroPadecimiento.size(); i++) {
-            System.out.println(registroPadecimiento.get(i).getTipoPadecimiento());
-        }
-    }
+    //public void mostrarTipoPadecimiento() {
+     //   for (int i = 0; i < registroPadecimiento.size(); i++) {
+         //   System.out.println(registroPadecimiento.get(i).getTipoPadecimiento());
+        //}
+   // }
 
     public void agregarClinicaRegistro() {
 
@@ -41,6 +59,12 @@ public class Registros {
     public void borrarRegistroPadecimiento(int x) {
         registroPadecimiento.remove(x);
     }
+
+    public void buscarDatoPadecimientos() {
+        String busqueda = "Obesidad";
+
+    }
+
 
     // REGISTRO DE MEDICOS
     ArrayList<Medico> registroMedicos = new ArrayList<Medico>();
@@ -86,12 +110,22 @@ public class Registros {
         }
     }
 
-    public void agregarDatoClinica(){
+    public void agregarDatoClinica() {
     }
 
     public void borrarRegistroClinica(int x) {
         registroClinica.remove(x);
     }
 
+
+    //REGISTRO DE USUARIO-PACIENTES
+    ArrayList<Persona> registroPersonas = new ArrayList<Persona>();
+    Persona persona1 = new Persona();
+
+
+    //Metodo para agregar registro del usuario
+    public void agregarUsuario() {
+        registroPersonas.add(persona1);
+    }
 
 }
