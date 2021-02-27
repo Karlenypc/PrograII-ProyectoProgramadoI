@@ -54,23 +54,6 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel3_Superior = new javax.swing.JPanel();
         jLabel_Menu = new javax.swing.JLabel();
         jPanel_Central = new javax.swing.JPanel();
-        jPanel1_RegistroUsuarios = new javax.swing.JPanel();
-        jLabel_InfoPersonal = new javax.swing.JLabel();
-        jLabel_NombrePadecimiento = new javax.swing.JLabel();
-        txtCorreoElectronico = new javax.swing.JTextField();
-        jLabel_descripPadecimiento = new javax.swing.JLabel();
-        txtNombreCompleto = new javax.swing.JTextField();
-        jLabel_cedula = new javax.swing.JLabel();
-        txtCedula = new javax.swing.JTextField();
-        jLabel_correoElectronico = new javax.swing.JLabel();
-        jLabel_tipoPadecimiento = new javax.swing.JLabel();
-        jComboBox_nombrePadecimiento = new javax.swing.JComboBox<>();
-        ibiFoto = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel_nombre = new javax.swing.JLabel();
-        jComboBox_tipoPadecimiento = new javax.swing.JComboBox<>();
-        btnCargarFoto = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -247,6 +230,30 @@ public class MainWindow extends javax.swing.JFrame {
         txtCanton4 = new javax.swing.JTextField();
         jLabel_distrito4 = new javax.swing.JLabel();
         txtDistrito4 = new javax.swing.JTextField();
+        jPanel1_RegistroUsuarios = new javax.swing.JPanel();
+        jLabel_InfoPersonal = new javax.swing.JLabel();
+        jLabel_NombrePadecimiento = new javax.swing.JLabel();
+        txtCorreoElectronico = new javax.swing.JTextField();
+        jLabel_descripPadecimiento = new javax.swing.JLabel();
+        txtApeliido = new javax.swing.JTextField();
+        jLabel_cedula = new javax.swing.JLabel();
+        txtCedula = new javax.swing.JTextField();
+        jLabel_correoElectronico = new javax.swing.JLabel();
+        jLabel_tipoPadecimiento = new javax.swing.JLabel();
+        jComboBox_nombrePadecimiento = new javax.swing.JComboBox<>();
+        ibiFoto = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel_nombre = new javax.swing.JLabel();
+        jComboBox_tipoPadecimiento = new javax.swing.JComboBox<>();
+        btnCargarFoto = new javax.swing.JButton();
+        jLabel_nombre1 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel_cedula1 = new javax.swing.JLabel();
+        txtCedula1 = new javax.swing.JTextField();
+        jLabel_correoElectronico1 = new javax.swing.JLabel();
+        jComboBox_tipoPadecimiento1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -413,122 +420,6 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel1_Base.add(jPanel3_Superior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 40));
 
         jPanel_Central.setLayout(new java.awt.CardLayout());
-
-        jPanel1_RegistroUsuarios.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1_RegistroUsuarios.setPreferredSize(new java.awt.Dimension(620, 420));
-        jPanel1_RegistroUsuarios.setRequestFocusEnabled(false);
-        jPanel1_RegistroUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel_InfoPersonal.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
-        jLabel_InfoPersonal.setForeground(new java.awt.Color(0, 10, 26));
-        jLabel_InfoPersonal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_InfoPersonal.setText("INFORMACIÓN PERSONAL");
-        jLabel_InfoPersonal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jLabel_InfoPersonal.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanel1_RegistroUsuarios.add(jLabel_InfoPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 17, 230, 28));
-
-        jLabel_NombrePadecimiento.setBackground(new java.awt.Color(169, 164, 160));
-        jLabel_NombrePadecimiento.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
-        jLabel_NombrePadecimiento.setForeground(new java.awt.Color(30, 29, 26));
-        jLabel_NombrePadecimiento.setText("Nombre Padecimiento:");
-        jPanel1_RegistroUsuarios.add(jLabel_NombrePadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 160, 30));
-
-        txtCorreoElectronico.setBackground(new java.awt.Color(231, 229, 218));
-        txtCorreoElectronico.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
-        txtCorreoElectronico.setForeground(new java.awt.Color(30, 29, 26));
-        txtCorreoElectronico.setText("jTextField1");
-        txtCorreoElectronico.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1_RegistroUsuarios.add(txtCorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 230, 30));
-
-        jLabel_descripPadecimiento.setBackground(new java.awt.Color(169, 164, 160));
-        jLabel_descripPadecimiento.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
-        jLabel_descripPadecimiento.setForeground(new java.awt.Color(30, 29, 26));
-        jLabel_descripPadecimiento.setText("Descripción Padecimiento:");
-        jPanel1_RegistroUsuarios.add(jLabel_descripPadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 190, 30));
-
-        txtNombreCompleto.setBackground(new java.awt.Color(231, 229, 218));
-        txtNombreCompleto.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
-        txtNombreCompleto.setForeground(new java.awt.Color(30, 29, 26));
-        txtNombreCompleto.setText("jTextField1");
-        txtNombreCompleto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1_RegistroUsuarios.add(txtNombreCompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 230, 30));
-
-        jLabel_cedula.setBackground(new java.awt.Color(169, 164, 160));
-        jLabel_cedula.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
-        jLabel_cedula.setForeground(new java.awt.Color(30, 29, 26));
-        jLabel_cedula.setText("Cédula:");
-        jPanel1_RegistroUsuarios.add(jLabel_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 140, 30));
-
-        txtCedula.setBackground(new java.awt.Color(231, 229, 218));
-        txtCedula.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
-        txtCedula.setForeground(new java.awt.Color(30, 29, 26));
-        txtCedula.setText("jTextField1");
-        txtCedula.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1_RegistroUsuarios.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 230, 30));
-
-        jLabel_correoElectronico.setBackground(new java.awt.Color(169, 164, 160));
-        jLabel_correoElectronico.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
-        jLabel_correoElectronico.setForeground(new java.awt.Color(30, 29, 26));
-        jLabel_correoElectronico.setText("Correo Electrónico:");
-        jPanel1_RegistroUsuarios.add(jLabel_correoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 140, 30));
-
-        jLabel_tipoPadecimiento.setBackground(new java.awt.Color(169, 164, 160));
-        jLabel_tipoPadecimiento.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
-        jLabel_tipoPadecimiento.setForeground(new java.awt.Color(30, 29, 26));
-        jLabel_tipoPadecimiento.setText("Tipo Padecimiento:");
-        jPanel1_RegistroUsuarios.add(jLabel_tipoPadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 140, 30));
-
-        jComboBox_nombrePadecimiento.setBackground(new java.awt.Color(231, 229, 218));
-        jComboBox_nombrePadecimiento.setFont(new java.awt.Font("Microsoft YaHei", 0, 13)); // NOI18N
-        jComboBox_nombrePadecimiento.setForeground(new java.awt.Color(30, 29, 26));
-        jComboBox_nombrePadecimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" }));
-        jComboBox_nombrePadecimiento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox_nombrePadecimientoActionPerformed(evt);
-            }
-        });
-        jPanel1_RegistroUsuarios.add(jComboBox_nombrePadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 230, 30));
-
-        ibiFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ibiFoto.setText("FOTO");
-        ibiFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1_RegistroUsuarios.add(ibiFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 170, 200));
-
-        jTextArea1.setBackground(new java.awt.Color(231, 229, 218));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(30, 29, 26));
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jPanel1_RegistroUsuarios.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 340, 120));
-
-        jLabel_nombre.setBackground(new java.awt.Color(169, 164, 160));
-        jLabel_nombre.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
-        jLabel_nombre.setForeground(new java.awt.Color(30, 29, 26));
-        jLabel_nombre.setText("Nombre Completo:");
-        jPanel1_RegistroUsuarios.add(jLabel_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 140, 30));
-
-        jComboBox_tipoPadecimiento.setBackground(new java.awt.Color(231, 229, 218));
-        jComboBox_tipoPadecimiento.setFont(new java.awt.Font("Microsoft YaHei", 0, 13)); // NOI18N
-        jComboBox_tipoPadecimiento.setForeground(new java.awt.Color(30, 29, 26));
-        jComboBox_tipoPadecimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" }));
-        jComboBox_tipoPadecimiento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox_tipoPadecimientoActionPerformed(evt);
-            }
-        });
-        jPanel1_RegistroUsuarios.add(jComboBox_tipoPadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 230, 30));
-
-        btnCargarFoto.setText("jButton1");
-        btnCargarFoto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCargarFotoActionPerformed(evt);
-            }
-        });
-        jPanel1_RegistroUsuarios.add(btnCargarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 120, 30));
-
-        jPanel_Central.add(jPanel1_RegistroUsuarios, "card2");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setPreferredSize(new java.awt.Dimension(620, 420));
@@ -1949,6 +1840,179 @@ public class MainWindow extends javax.swing.JFrame {
 
         jPanel_Central.add(jPanel3_clinica4, "card15");
 
+        jPanel1_RegistroUsuarios.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1_RegistroUsuarios.setPreferredSize(new java.awt.Dimension(620, 420));
+        jPanel1_RegistroUsuarios.setRequestFocusEnabled(false);
+        jPanel1_RegistroUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel_InfoPersonal.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
+        jLabel_InfoPersonal.setForeground(new java.awt.Color(0, 10, 26));
+        jLabel_InfoPersonal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_InfoPersonal.setText("INFORMACIÓN PERSONAL");
+        jLabel_InfoPersonal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel_InfoPersonal.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jPanel1_RegistroUsuarios.add(jLabel_InfoPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 17, 230, 28));
+
+        jLabel_NombrePadecimiento.setBackground(new java.awt.Color(169, 164, 160));
+        jLabel_NombrePadecimiento.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
+        jLabel_NombrePadecimiento.setForeground(new java.awt.Color(30, 29, 26));
+        jLabel_NombrePadecimiento.setText("Nombre Padecimiento:");
+        jPanel1_RegistroUsuarios.add(jLabel_NombrePadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, 160, 30));
+
+        txtCorreoElectronico.setBackground(new java.awt.Color(231, 229, 218));
+        txtCorreoElectronico.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        txtCorreoElectronico.setForeground(new java.awt.Color(30, 29, 26));
+        txtCorreoElectronico.setText("Ingrese Correo Electronico");
+        txtCorreoElectronico.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtCorreoElectronico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCorreoElectronicoActionPerformed(evt);
+            }
+        });
+        jPanel1_RegistroUsuarios.add(txtCorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 230, 30));
+
+        jLabel_descripPadecimiento.setBackground(new java.awt.Color(169, 164, 160));
+        jLabel_descripPadecimiento.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
+        jLabel_descripPadecimiento.setForeground(new java.awt.Color(30, 29, 26));
+        jLabel_descripPadecimiento.setText("Descripción Padecimiento:");
+        jPanel1_RegistroUsuarios.add(jLabel_descripPadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 190, 30));
+
+        txtApeliido.setBackground(new java.awt.Color(231, 229, 218));
+        txtApeliido.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        txtApeliido.setForeground(new java.awt.Color(30, 29, 26));
+        txtApeliido.setText("Ingrese su apellido");
+        txtApeliido.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1_RegistroUsuarios.add(txtApeliido, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 230, 30));
+
+        jLabel_cedula.setBackground(new java.awt.Color(169, 164, 160));
+        jLabel_cedula.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
+        jLabel_cedula.setForeground(new java.awt.Color(30, 29, 26));
+        jLabel_cedula.setText("Edad:");
+        jPanel1_RegistroUsuarios.add(jLabel_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 140, 30));
+
+        txtCedula.setBackground(new java.awt.Color(231, 229, 218));
+        txtCedula.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        txtCedula.setForeground(new java.awt.Color(30, 29, 26));
+        txtCedula.setText("Ingrese su Edad");
+        txtCedula.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCedulaActionPerformed(evt);
+            }
+        });
+        jPanel1_RegistroUsuarios.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 230, 30));
+
+        jLabel_correoElectronico.setBackground(new java.awt.Color(169, 164, 160));
+        jLabel_correoElectronico.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
+        jLabel_correoElectronico.setForeground(new java.awt.Color(30, 29, 26));
+        jLabel_correoElectronico.setText("¿Sufre algun padecimiento?");
+        jPanel1_RegistroUsuarios.add(jLabel_correoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 190, 30));
+
+        jLabel_tipoPadecimiento.setBackground(new java.awt.Color(169, 164, 160));
+        jLabel_tipoPadecimiento.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
+        jLabel_tipoPadecimiento.setForeground(new java.awt.Color(30, 29, 26));
+        jLabel_tipoPadecimiento.setText("Tipo Padecimiento:");
+        jPanel1_RegistroUsuarios.add(jLabel_tipoPadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 140, 30));
+
+        jComboBox_nombrePadecimiento.setBackground(new java.awt.Color(231, 229, 218));
+        jComboBox_nombrePadecimiento.setFont(new java.awt.Font("Microsoft YaHei", 0, 13)); // NOI18N
+        jComboBox_nombrePadecimiento.setForeground(new java.awt.Color(30, 29, 26));
+        jComboBox_nombrePadecimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" }));
+        jComboBox_nombrePadecimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_nombrePadecimientoActionPerformed(evt);
+            }
+        });
+        jPanel1_RegistroUsuarios.add(jComboBox_nombrePadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 420, 230, 30));
+
+        ibiFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ibiFoto.setText("FOTO");
+        ibiFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1_RegistroUsuarios.add(ibiFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 230, 260));
+
+        jTextArea1.setBackground(new java.awt.Color(231, 229, 218));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(30, 29, 26));
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel1_RegistroUsuarios.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, 240, 90));
+
+        jLabel_nombre.setBackground(new java.awt.Color(169, 164, 160));
+        jLabel_nombre.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
+        jLabel_nombre.setForeground(new java.awt.Color(30, 29, 26));
+        jLabel_nombre.setText("Apeliido:");
+        jPanel1_RegistroUsuarios.add(jLabel_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 140, 30));
+
+        jComboBox_tipoPadecimiento.setBackground(new java.awt.Color(231, 229, 218));
+        jComboBox_tipoPadecimiento.setFont(new java.awt.Font("Microsoft YaHei", 0, 13)); // NOI18N
+        jComboBox_tipoPadecimiento.setForeground(new java.awt.Color(30, 29, 26));
+        jComboBox_tipoPadecimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SI", "NO" }));
+        jComboBox_tipoPadecimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_tipoPadecimientoActionPerformed(evt);
+            }
+        });
+        jPanel1_RegistroUsuarios.add(jComboBox_tipoPadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 80, 30));
+
+        btnCargarFoto.setText("Cargar Foto ");
+        btnCargarFoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarFotoActionPerformed(evt);
+            }
+        });
+        jPanel1_RegistroUsuarios.add(btnCargarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, 120, 30));
+
+        jLabel_nombre1.setBackground(new java.awt.Color(169, 164, 160));
+        jLabel_nombre1.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
+        jLabel_nombre1.setForeground(new java.awt.Color(30, 29, 26));
+        jLabel_nombre1.setText("Nombre:");
+        jPanel1_RegistroUsuarios.add(jLabel_nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 140, 30));
+
+        txtNombre.setBackground(new java.awt.Color(231, 229, 218));
+        txtNombre.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(30, 29, 26));
+        txtNombre.setText("Ingrese su nombre");
+        txtNombre.setToolTipText("");
+        txtNombre.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1_RegistroUsuarios.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 230, 30));
+
+        jButton1.setText("Guardar");
+        jPanel1_RegistroUsuarios.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, -1));
+
+        jLabel_cedula1.setBackground(new java.awt.Color(169, 164, 160));
+        jLabel_cedula1.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
+        jLabel_cedula1.setForeground(new java.awt.Color(30, 29, 26));
+        jLabel_cedula1.setText("Cédula:");
+        jPanel1_RegistroUsuarios.add(jLabel_cedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 140, 30));
+
+        txtCedula1.setBackground(new java.awt.Color(231, 229, 218));
+        txtCedula1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        txtCedula1.setForeground(new java.awt.Color(30, 29, 26));
+        txtCedula1.setText("Ingrese su numero de Cedula");
+        txtCedula1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1_RegistroUsuarios.add(txtCedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 230, 30));
+
+        jLabel_correoElectronico1.setBackground(new java.awt.Color(169, 164, 160));
+        jLabel_correoElectronico1.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
+        jLabel_correoElectronico1.setForeground(new java.awt.Color(30, 29, 26));
+        jLabel_correoElectronico1.setText("Correo Electrónico:");
+        jPanel1_RegistroUsuarios.add(jLabel_correoElectronico1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 140, 30));
+
+        jComboBox_tipoPadecimiento1.setBackground(new java.awt.Color(231, 229, 218));
+        jComboBox_tipoPadecimiento1.setFont(new java.awt.Font("Microsoft YaHei", 0, 13)); // NOI18N
+        jComboBox_tipoPadecimiento1.setForeground(new java.awt.Color(30, 29, 26));
+        jComboBox_tipoPadecimiento1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" }));
+        jComboBox_tipoPadecimiento1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_tipoPadecimiento1ActionPerformed(evt);
+            }
+        });
+        jPanel1_RegistroUsuarios.add(jComboBox_tipoPadecimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 230, 30));
+
+        jPanel_Central.add(jPanel1_RegistroUsuarios, "card2");
+
         jPanel1_Base.add(jPanel_Central, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 700, 580));
 
         getContentPane().add(jPanel1_Base, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 904, -1));
@@ -2312,6 +2376,18 @@ public class MainWindow extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnCargarFotoActionPerformed
 
+    private void txtCorreoElectronicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoElectronicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCorreoElectronicoActionPerformed
+
+    private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCedulaActionPerformed
+
+    private void jComboBox_tipoPadecimiento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_tipoPadecimiento1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox_tipoPadecimiento1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2356,6 +2432,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnProcedimiento;
     private javax.swing.JButton btnRegistro;
     private javax.swing.JLabel ibiFoto;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton_VisualizarClinica1;
     private javax.swing.JButton jButton_VisualizarClinica2;
     private javax.swing.JButton jButton_VisualizarClinica3;
@@ -2366,6 +2443,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton jButton_VisualizarMedico4;
     private javax.swing.JComboBox<String> jComboBox_nombrePadecimiento;
     private javax.swing.JComboBox<String> jComboBox_tipoPadecimiento;
+    private javax.swing.JComboBox<String> jComboBox_tipoPadecimiento1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -2402,7 +2480,9 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_canton3;
     private javax.swing.JLabel jLabel_canton4;
     private javax.swing.JLabel jLabel_cedula;
+    private javax.swing.JLabel jLabel_cedula1;
     private javax.swing.JLabel jLabel_correoElectronico;
+    private javax.swing.JLabel jLabel_correoElectronico1;
     private javax.swing.JLabel jLabel_descripPadecimiento;
     private javax.swing.JLabel jLabel_direccion1;
     private javax.swing.JLabel jLabel_direccion2;
@@ -2430,6 +2510,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_infoContacto3;
     private javax.swing.JLabel jLabel_infoContacto4;
     private javax.swing.JLabel jLabel_nombre;
+    private javax.swing.JLabel jLabel_nombre1;
     private javax.swing.JLabel jLabel_procedimientosRealizados;
     private javax.swing.JLabel jLabel_procedimientosRealizados1;
     private javax.swing.JLabel jLabel_procedimientosRealizados2;
@@ -2471,6 +2552,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextField txtAfiliacionPerteneciente1;
     private javax.swing.JTextField txtAfiliacionPerteneciente2;
     private javax.swing.JTextField txtAfiliacionPerteneciente3;
+    private javax.swing.JTextField txtApeliido;
     private javax.swing.JTextField txtApellido1;
     private javax.swing.JTextField txtApellido2;
     private javax.swing.JTextField txtApellido3;
@@ -2480,6 +2562,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextField txtCanton3;
     private javax.swing.JTextField txtCanton4;
     private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCedula1;
     private javax.swing.JTextField txtCedulaMedico1;
     private javax.swing.JTextField txtCedulaMedico2;
     private javax.swing.JTextField txtCedulaMedico3;
@@ -2509,11 +2592,11 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextField txtFinalizacionEstudios1;
     private javax.swing.JTextField txtFinalizacionEstudios2;
     private javax.swing.JTextField txtFinalizacionEstudios3;
+    private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtNombreClinica1;
     private javax.swing.JTextField txtNombreClinica2;
     private javax.swing.JTextField txtNombreClinica3;
     private javax.swing.JTextField txtNombreClinica4;
-    private javax.swing.JTextField txtNombreCompleto;
     private javax.swing.JTextField txtNombreMedico1;
     private javax.swing.JTextField txtNombreMedico2;
     private javax.swing.JTextField txtNombreMedico3;
