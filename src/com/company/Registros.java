@@ -120,12 +120,12 @@ public class Registros {
 
     //REGISTRO DE USUARIO-PACIENTES
     ArrayList<Persona> registroPersonas = new ArrayList<Persona>();
-    Persona persona1 = new Persona();
+ 
 
 
     //Metodo para agregar registro del usuario
     public void agregarUsuario() {
-        registroPersonas.add(persona1);
+       
     }
 
 }

@@ -11,11 +11,12 @@ package View;
  */
 public class Login extends javax.swing.JFrame {
 
-   MainWindow window = new MainWindow();
+    MainWindow window = new MainWindow();
+
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+
     }
 
     /**
@@ -107,8 +108,9 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCorreoUsuarioActionPerformed
 
     private void jButton_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_IngresarActionPerformed
-    window.setVisible(true);
-    jPanel1.setVisible(false);
+        window.setVisible(true);
+        jPanel1.setVisible(false);
+        
     }//GEN-LAST:event_jButton_IngresarActionPerformed
 
     /**

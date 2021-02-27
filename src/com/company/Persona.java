@@ -2,11 +2,27 @@ package com.company;
 
 //clase se utiliza como superclase de la sub clase Medico y Paciente
 public class Persona {
+
     public String name;
     public String apellido;
     private String id;
     private String email;
     public int edad;
+    public String usuarioName;
+    public String password;
+
+    public Persona() {
+        this.name = "";
+        this.apellido = "";
+        this.id = "";
+        this.email = "";
+
+    }
+
+    public Persona(String usuarioName, String password) {
+        this.usuarioName = usuarioName;
+        this.password = password;
+    }
 
     public Persona(String name, String apellido, String id, String email, int edad) {
         this.name = name;
@@ -14,9 +30,6 @@ public class Persona {
         this.id = id;
         this.email = email;
         this.edad = edad;
-    }
-
-    public Persona() {
     }
 
     public String getName() {
