@@ -4,7 +4,7 @@ import View.MainWindow;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class ControlBotones {
 
     private static MainWindow formulario;
     private static Persona persona[];
@@ -12,7 +12,7 @@ public class Main {
     private static int contador;
 //    private static int contador2;
 
-    public static void main(String[] args) {
+    public static void almacenarDatos() {
         formulario = new MainWindow();
         persona = new Persona[100]; // AREGLO ALMACENARA LA INFORMACION DE LOS USUARIOS QUE SE REGISTREN
 
@@ -21,7 +21,7 @@ public class Main {
 
         }
         contador = 0;
-        formulario.setVisible(true);
+        
     }
     //METODO PARA GUARDAR NOMBRES DE USSARIO Y PASSWORD APLICADO EN PANEL LOGIN
 //    public static void guardarLogin(String usuario, String contrasena){

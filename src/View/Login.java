@@ -5,6 +5,10 @@
  */
 package View;
 
+import View.idea.NuevoRegistro;
+import com.company.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Karlenypc
@@ -16,6 +20,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
 
     }
 
@@ -34,11 +39,12 @@ public class Login extends javax.swing.JFrame {
         txtCorreoUsuario = new javax.swing.JTextField();
         jLabel_Contraseña = new javax.swing.JLabel();
         txtPasswordField = new javax.swing.JPasswordField();
-        jButton_Ingresar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        jButton_Ingresar1 = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -50,14 +56,20 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagesIcons/LogoCentroMedico.png"))); // NOI18N
         jLabel1.setText("Icon");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 170, 180));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 170, 180));
 
         jLabel_Usuario.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         jLabel_Usuario.setForeground(new java.awt.Color(0, 32, 79));
         jLabel_Usuario.setText("Usuario:");
         jPanel1.add(jLabel_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 95, 26));
 
-        txtCorreoUsuario.setText("jTextField1");
+        txtCorreoUsuario.setText("Nombre de Usuario ");
+        txtCorreoUsuario.setToolTipText("");
+        txtCorreoUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCorreoUsuarioMouseClicked(evt);
+            }
+        });
         txtCorreoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCorreoUsuarioActionPerformed(evt);
@@ -70,18 +82,14 @@ public class Login extends javax.swing.JFrame {
         jLabel_Contraseña.setText("Contraseña:");
         jPanel1.add(jLabel_Contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 92, 24));
 
-        txtPasswordField.setText("jPasswordField1");
-        jPanel1.add(txtPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 220, 31));
-
-        jButton_Ingresar.setForeground(new java.awt.Color(255, 0, 0));
-        jButton_Ingresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagesIcons/BotonIngresar.png"))); // NOI18N
-        jButton_Ingresar.setBorderPainted(false);
-        jButton_Ingresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_IngresarActionPerformed(evt);
+        txtPasswordField.setText("Password");
+        txtPasswordField.setToolTipText("");
+        txtPasswordField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtPasswordFieldMouseClicked(evt);
             }
         });
-        jPanel1.add(jButton_Ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 100, 30));
+        jPanel1.add(txtPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 220, 31));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagesIcons/icons8_lock_25px.png"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -98,6 +106,26 @@ public class Login extends javax.swing.JFrame {
         jSeparator2.setBackground(new java.awt.Color(0, 32, 79));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 250, 10));
 
+        jButton_Ingresar1.setForeground(new java.awt.Color(255, 0, 0));
+        jButton_Ingresar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagesIcons/BotonIngresar.png"))); // NOI18N
+        jButton_Ingresar1.setBorderPainted(false);
+        jButton_Ingresar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Ingresar1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_Ingresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 100, 30));
+
+        btnRegistrar.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(0, 0, 204));
+        btnRegistrar.setText("Nuevo Usuario");
+        btnRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRegistrarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, 90, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 520));
 
         pack();
@@ -107,11 +135,33 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorreoUsuarioActionPerformed
 
-    private void jButton_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_IngresarActionPerformed
-        window.setVisible(true);
-        jPanel1.setVisible(false);
-        
-    }//GEN-LAST:event_jButton_IngresarActionPerformed
+    private void txtPasswordFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordFieldMouseClicked
+        txtPasswordField.setText("");
+    }//GEN-LAST:event_txtPasswordFieldMouseClicked
+
+    private void txtCorreoUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCorreoUsuarioMouseClicked
+        txtCorreoUsuario.setText("");
+    }//GEN-LAST:event_txtCorreoUsuarioMouseClicked
+
+    private void jButton_Ingresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Ingresar1ActionPerformed
+
+        String usuario = txtCorreoUsuario.getText();
+        String password = txtPasswordField.getText();
+        int pos = Usuario.verificarIngreso(usuario, password);
+        if (pos == -1) {
+            JOptionPane.showMessageDialog(this, " USUARIO O CONTRASENA INCORRECTA");
+        } else {
+            window.setVisible(true);
+            this.dispose();
+        }
+
+    }//GEN-LAST:event_jButton_Ingresar1ActionPerformed
+
+    private void btnRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarMouseClicked
+        NuevoRegistro nuevo = new NuevoRegistro();
+        nuevo.setVisible(true);
+
+    }//GEN-LAST:event_btnRegistrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -149,7 +199,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_Ingresar;
+    private javax.swing.JLabel btnRegistrar;
+    private javax.swing.JButton jButton_Ingresar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
