@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
-
+// CLASE PROCEDIMIENTOS 
 public class Padecimiento {
     private String nombrePadecimiento;
     private String tipoPadecimiento;

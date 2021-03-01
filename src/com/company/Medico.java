@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
-
+// CLASE MEDICO SE UTILIZA PARA ALMACENAR MEDICOS, ESTA SIN USO POR EL MOMENTO
 class Medico extends Persona {
 
 

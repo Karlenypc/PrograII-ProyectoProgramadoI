@@ -7,8 +7,13 @@ package View;
 
 ;
 
+import View.idea.Calendario;
 import com.company.ControlBotones;
+import com.company.Funcionalidades;
+import com.company.Persona;
+import com.company.Registros;
 import java.awt.Image;
+import java.awt.Panel;
 import java.io.File;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -24,13 +29,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class MainWindow extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainWindow
-     */
+    Registros inicio = new Registros();
+
     public MainWindow() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        inicio.agregar();
+
     }
 
     @SuppressWarnings("unchecked")
@@ -259,15 +265,11 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel2_Menu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        btnPaciente = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         btnMedico = new javax.swing.JButton();
         btnRegistro = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         btnCita = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        btnProcedimiento = new javax.swing.JButton();
         btnClinica = new javax.swing.JButton();
         jPanel3_Superior = new javax.swing.JPanel();
         jLabel_Menu = new javax.swing.JLabel();
@@ -316,6 +318,9 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_educacion3 = new javax.swing.JLabel();
         txtEspecialidadMedico1 = new javax.swing.JTextField();
         txtPaisUniversidad1 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
         jPanel2_medico2 = new javax.swing.JPanel();
         jLabel_InfoMedica2 = new javax.swing.JLabel();
         txtNombreMedico2 = new javax.swing.JTextField();
@@ -336,6 +341,9 @@ public class MainWindow extends javax.swing.JFrame {
         jTextArea_procedimientoCosto1 = new javax.swing.JTextArea();
         jLabel_Afiliacion1 = new javax.swing.JLabel();
         txtAfiliacionPerteneciente1 = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
         jPanel2_medico3 = new javax.swing.JPanel();
         jLabel_InfoMedica3 = new javax.swing.JLabel();
         txtNombreMedico3 = new javax.swing.JTextField();
@@ -356,6 +364,9 @@ public class MainWindow extends javax.swing.JFrame {
         jTextArea_procedimientoCosto2 = new javax.swing.JTextArea();
         jLabel_Afiliacion2 = new javax.swing.JLabel();
         txtAfiliacionPerteneciente2 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
         jPanel2_medico4 = new javax.swing.JPanel();
         jLabel_InfoMedica4 = new javax.swing.JLabel();
         txtNombreMedico4 = new javax.swing.JTextField();
@@ -376,6 +387,9 @@ public class MainWindow extends javax.swing.JFrame {
         jTextArea_procedimientoCosto3 = new javax.swing.JTextArea();
         jLabel_Afiliacion3 = new javax.swing.JLabel();
         txtAfiliacionPerteneciente3 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
         jPanel3_filtroClinica = new javax.swing.JPanel();
         jLabel_InfoMedica1 = new javax.swing.JLabel();
         jLabel_filtroNumeroClinica = new javax.swing.JLabel();
@@ -406,6 +420,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtProvincia1 = new javax.swing.JTextField();
         txtCanton1 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jPanel3_clinica2 = new javax.swing.JPanel();
         jLabel_InfoClinica2 = new javax.swing.JLabel();
         txtNombreClinica2 = new javax.swing.JTextField();
@@ -420,6 +435,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtCanton2 = new javax.swing.JTextField();
         jLabel_distrito2 = new javax.swing.JLabel();
         txtDistrito2 = new javax.swing.JTextField();
+        jButton8 = new javax.swing.JButton();
         jPanel3_clinica3 = new javax.swing.JPanel();
         jLabel_InfoClinica3 = new javax.swing.JLabel();
         txtNombreClinica3 = new javax.swing.JTextField();
@@ -434,6 +450,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtCanton3 = new javax.swing.JTextField();
         jLabel_distrito3 = new javax.swing.JLabel();
         txtDistrito3 = new javax.swing.JTextField();
+        jButton9 = new javax.swing.JButton();
         jPanel3_clinica4 = new javax.swing.JPanel();
         jLabel_InfoClinica4 = new javax.swing.JLabel();
         txtNombreClinica4 = new javax.swing.JTextField();
@@ -448,6 +465,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtCanton4 = new javax.swing.JTextField();
         jLabel_distrito4 = new javax.swing.JLabel();
         txtDistrito4 = new javax.swing.JTextField();
+        jButton10 = new javax.swing.JButton();
         jPanel1_RegistroUsuarios = new javax.swing.JPanel();
         jLabel_InfoPersonal = new javax.swing.JLabel();
         jLabel_NombrePadecimiento = new javax.swing.JLabel();
@@ -647,11 +665,11 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 640, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+            .addGap(0, 560, Short.MAX_VALUE)
         );
 
         jPanel_Central1.add(jPanel7, "card5");
@@ -663,11 +681,11 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 640, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+            .addGap(0, 560, Short.MAX_VALUE)
         );
 
         jPanel_Central1.add(jPanel8, "card6");
@@ -679,11 +697,11 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 640, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+            .addGap(0, 560, Short.MAX_VALUE)
         );
 
         jPanel_Central1.add(jPanel9, "card7");
@@ -2252,34 +2270,13 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel2_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagesIcons/icons8_google_forms_33px.png"))); // NOI18N
-        jPanel2_Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 40, 40));
+        jPanel2_Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 40, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagesIcons/icons8_medical_doctor_33px.png"))); // NOI18N
-        jPanel2_Menu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 40, 40));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagesIcons/icons8_search_property_33px.png"))); // NOI18N
-        jPanel2_Menu.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 40, 40));
-
-        btnPaciente.setBackground(new java.awt.Color(106, 100, 90));
-        btnPaciente.setFont(new java.awt.Font("Microsoft YaHei", 1, 15)); // NOI18N
-        btnPaciente.setForeground(new java.awt.Color(30, 29, 26));
-        btnPaciente.setText("Pacientes");
-        btnPaciente.setBorder(null);
-        btnPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnPaciente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mouseclicked(evt);
-            }
-        });
-        btnPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPacienteActionPerformed(evt);
-            }
-        });
-        jPanel2_Menu.add(btnPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 210, 41));
+        jPanel2_Menu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 40, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagesIcons/icons8_hospital_3_33px.png"))); // NOI18N
-        jPanel2_Menu.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 40, 40));
+        jPanel2_Menu.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 40, 40));
 
         btnMedico.setBackground(new java.awt.Color(106, 100, 90));
         btnMedico.setFont(new java.awt.Font("Microsoft YaHei", 1, 15)); // NOI18N
@@ -2298,7 +2295,7 @@ public class MainWindow extends javax.swing.JFrame {
                 btnMedicoActionPerformed(evt);
             }
         });
-        jPanel2_Menu.add(btnMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 210, 41));
+        jPanel2_Menu.add(btnMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 210, 41));
 
         btnRegistro.setBackground(new java.awt.Color(106, 100, 90));
         btnRegistro.setFont(new java.awt.Font("Microsoft YaHei", 1, 15)); // NOI18N
@@ -2316,7 +2313,7 @@ public class MainWindow extends javax.swing.JFrame {
                 btnRegistroActionPerformed(evt);
             }
         });
-        jPanel2_Menu.add(btnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 210, 41));
+        jPanel2_Menu.add(btnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 210, 41));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagesIcons/icons8_health_book_33px.png"))); // NOI18N
         jPanel2_Menu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 40, 40));
@@ -2339,28 +2336,6 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_Menu.add(btnCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 210, 41));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagesIcons/icons8_hypertension_33px_1.png"))); // NOI18N
-        jPanel2_Menu.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 40, 40));
-
-        btnProcedimiento.setBackground(new java.awt.Color(106, 100, 90));
-        btnProcedimiento.setFont(new java.awt.Font("Microsoft YaHei", 1, 15)); // NOI18N
-        btnProcedimiento.setForeground(new java.awt.Color(30, 29, 26));
-        btnProcedimiento.setText("        Padecimiento");
-        btnProcedimiento.setBorder(null);
-        btnProcedimiento.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnProcedimiento.setRolloverEnabled(true);
-        btnProcedimiento.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mouseclicked(evt);
-            }
-        });
-        btnProcedimiento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProcedimientoActionPerformed(evt);
-            }
-        });
-        jPanel2_Menu.add(btnProcedimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 210, 41));
-
         btnClinica.setBackground(new java.awt.Color(106, 100, 90));
         btnClinica.setFont(new java.awt.Font("Microsoft YaHei", 1, 15)); // NOI18N
         btnClinica.setForeground(new java.awt.Color(30, 29, 26));
@@ -2378,7 +2353,7 @@ public class MainWindow extends javax.swing.JFrame {
                 btnClinicaActionPerformed(evt);
             }
         });
-        jPanel2_Menu.add(btnClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 210, 41));
+        jPanel2_Menu.add(btnClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 210, 41));
 
         jPanel1_Base.add(jPanel2_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 210, 580));
 
@@ -2468,10 +2443,12 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_RegistroMedicos.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel2_filtroMedico.add(jLabel_RegistroMedicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 230, 28));
 
+        txtEspecialidad1.setEditable(false);
         txtEspecialidad1.setBackground(new java.awt.Color(255, 255, 255));
         txtEspecialidad1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtEspecialidad1.setForeground(new java.awt.Color(30, 29, 26));
         txtEspecialidad1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEspecialidad1.setText("CARDIOLOGIA");
         txtEspecialidad1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2_filtroMedico.add(txtEspecialidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 130, 30));
 
@@ -2497,6 +2474,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtnombreMedico4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtnombreMedico4.setForeground(new java.awt.Color(30, 29, 26));
         txtnombreMedico4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtnombreMedico4.setText("LUCAS");
         txtnombreMedico4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtnombreMedico4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2505,10 +2483,12 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_filtroMedico.add(txtnombreMedico4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 130, 30));
 
+        txtApellido1.setEditable(false);
         txtApellido1.setBackground(new java.awt.Color(255, 255, 255));
         txtApellido1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtApellido1.setForeground(new java.awt.Color(30, 29, 26));
         txtApellido1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtApellido1.setText("MARTINEZ");
         txtApellido1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtApellido1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2529,10 +2509,12 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_filtroMedico.add(jButton_VisualizarMedico1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 100, 30));
 
+        txtnombreMedico1.setEditable(false);
         txtnombreMedico1.setBackground(new java.awt.Color(255, 255, 255));
         txtnombreMedico1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtnombreMedico1.setForeground(new java.awt.Color(30, 29, 26));
         txtnombreMedico1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtnombreMedico1.setText("FRANSICO");
         txtnombreMedico1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtnombreMedico1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2545,6 +2527,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtnombreMedico3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtnombreMedico3.setForeground(new java.awt.Color(30, 29, 26));
         txtnombreMedico3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtnombreMedico3.setText("ETHAN");
         txtnombreMedico3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2_filtroMedico.add(txtnombreMedico3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 130, 30));
 
@@ -2552,6 +2535,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtnombreMedico2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtnombreMedico2.setForeground(new java.awt.Color(30, 29, 26));
         txtnombreMedico2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtnombreMedico2.setText("SHANNEN");
         txtnombreMedico2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2_filtroMedico.add(txtnombreMedico2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 130, 30));
 
@@ -2559,6 +2543,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtApellido2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtApellido2.setForeground(new java.awt.Color(30, 29, 26));
         txtApellido2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtApellido2.setText("RETANA ");
         txtApellido2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2_filtroMedico.add(txtApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 130, 30));
 
@@ -2566,6 +2551,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtApellido3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtApellido3.setForeground(new java.awt.Color(30, 29, 26));
         txtApellido3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtApellido3.setText("ACKERMAN");
         txtApellido3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2_filtroMedico.add(txtApellido3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 130, 30));
 
@@ -2573,6 +2559,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtApellido4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtApellido4.setForeground(new java.awt.Color(30, 29, 26));
         txtApellido4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtApellido4.setText("DIAZ");
         txtApellido4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtApellido4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2585,6 +2572,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtEspecialidad2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtEspecialidad2.setForeground(new java.awt.Color(30, 29, 26));
         txtEspecialidad2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEspecialidad2.setText("MEDICINA GENERAL");
         txtEspecialidad2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2_filtroMedico.add(txtEspecialidad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 130, 30));
 
@@ -2592,6 +2580,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtEspecialidad3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtEspecialidad3.setForeground(new java.awt.Color(30, 29, 26));
         txtEspecialidad3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEspecialidad3.setText("NUTRICIONISTA");
         txtEspecialidad3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2_filtroMedico.add(txtEspecialidad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 130, 30));
 
@@ -2599,6 +2588,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtEspecialidad4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtEspecialidad4.setForeground(new java.awt.Color(30, 29, 26));
         txtEspecialidad4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEspecialidad4.setText("DERMATOLOGIA");
         txtEspecialidad4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtEspecialidad4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2667,7 +2657,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtidiomas.setBackground(new java.awt.Color(231, 229, 218));
         txtidiomas.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtidiomas.setForeground(new java.awt.Color(30, 29, 26));
-        txtidiomas.setText("idioma1 - idioma2...");
+        txtidiomas.setText("ESPAÑOL");
         txtidiomas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtidiomas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2679,7 +2669,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtCedulaMedico1.setBackground(new java.awt.Color(231, 229, 218));
         txtCedulaMedico1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtCedulaMedico1.setForeground(new java.awt.Color(30, 29, 26));
-        txtCedulaMedico1.setText("cedula");
+        txtCedulaMedico1.setText("115670345");
         txtCedulaMedico1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtCedulaMedico1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2692,14 +2682,14 @@ public class MainWindow extends javax.swing.JFrame {
         txtSlogan.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtSlogan.setForeground(new java.awt.Color(30, 29, 26));
         txtSlogan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtSlogan.setText("\"slogan\"");
+        txtSlogan.setText("\"SIEMPRE PENDIENTE DE SU SALUD\"");
         txtSlogan.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2_medico1.add(txtSlogan, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 270, 30));
+        jPanel2_medico1.add(txtSlogan, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 270, 30));
 
         txtFinalizacionEstudios.setBackground(new java.awt.Color(231, 229, 218));
         txtFinalizacionEstudios.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtFinalizacionEstudios.setForeground(new java.awt.Color(30, 29, 26));
-        txtFinalizacionEstudios.setText("mes y año finalizacionEstudios");
+        txtFinalizacionEstudios.setText("SEPTIEMBRE -2010");
         txtFinalizacionEstudios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtFinalizacionEstudios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2711,7 +2701,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtTituloUniversitario.setBackground(new java.awt.Color(231, 229, 218));
         txtTituloUniversitario.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtTituloUniversitario.setForeground(new java.awt.Color(30, 29, 26));
-        txtTituloUniversitario.setText("tituloMedico");
+        txtTituloUniversitario.setText("MEDICO");
         txtTituloUniversitario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtTituloUniversitario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2723,7 +2713,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtUniversidadEstudio1.setBackground(new java.awt.Color(231, 229, 218));
         txtUniversidadEstudio1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtUniversidadEstudio1.setForeground(new java.awt.Color(30, 29, 26));
-        txtUniversidadEstudio1.setText("universidadEstudio");
+        txtUniversidadEstudio1.setText("UNIVERSIDAD SANTA PAULA");
         txtUniversidadEstudio1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtUniversidadEstudio1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2733,9 +2723,10 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel2_medico1.add(txtUniversidadEstudio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 230, 30));
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\pimie\\OneDrive\\Desktop\\fotosproyecto\\imagen doctor 1.png")); // NOI18N
         jLabel14.setText("FOTO???!");
         jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2_medico1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 160, 180));
+        jPanel2_medico1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 160, 180));
 
         jLabel_procedimientosRealizados.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_procedimientosRealizados.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
@@ -2746,7 +2737,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtCorreoMedico1.setBackground(new java.awt.Color(231, 229, 218));
         txtCorreoMedico1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtCorreoMedico1.setForeground(new java.awt.Color(30, 29, 26));
-        txtCorreoMedico1.setText("correoElectronico");
+        txtCorreoMedico1.setText("fjavier@gmail.com");
         txtCorreoMedico1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtCorreoMedico1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2759,14 +2750,14 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_Afiliacion.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_Afiliacion.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_Afiliacion.setText("Afiliación:");
-        jPanel2_medico1.add(jLabel_Afiliacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 490, 80, 30));
+        jPanel2_medico1.add(jLabel_Afiliacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, 80, 30));
 
         jTextArea_procedimientoCosto.setBackground(new java.awt.Color(231, 229, 218));
         jTextArea_procedimientoCosto.setColumns(20);
         jTextArea_procedimientoCosto.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         jTextArea_procedimientoCosto.setForeground(new java.awt.Color(30, 29, 26));
         jTextArea_procedimientoCosto.setRows(5);
-        jTextArea_procedimientoCosto.setText("Nombre - Costo\nNombre - Costo\nNombre - Costo");
+        jTextArea_procedimientoCosto.setText("- ELECTROCARDIOGRAMA \n- RESONANCIA MAGNETICA\n- ECOCARDIOGRAMA\n-RADIOGRAFIA DE PECHO");
         jScrollPane2.setViewportView(jTextArea_procedimientoCosto);
 
         jPanel2_medico1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 300, 90));
@@ -2774,16 +2765,16 @@ public class MainWindow extends javax.swing.JFrame {
         txtNombreMedico1.setBackground(new java.awt.Color(231, 229, 218));
         txtNombreMedico1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtNombreMedico1.setForeground(new java.awt.Color(30, 29, 26));
-        txtNombreMedico1.setText("nombreMedico1");
+        txtNombreMedico1.setText("FRANCISCO JAVIER MARTINEZ DIAZ");
         txtNombreMedico1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2_medico1.add(txtNombreMedico1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 230, 30));
 
         txtAfiliacionPerteneciente.setBackground(new java.awt.Color(255, 255, 255));
         txtAfiliacionPerteneciente.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtAfiliacionPerteneciente.setForeground(new java.awt.Color(30, 29, 26));
-        txtAfiliacionPerteneciente.setText("Colegio Medico Cirujanos...");
+        txtAfiliacionPerteneciente.setText("COLEGIO DE MEDICOS Y CIRUJANOS COSTA RICA");
         txtAfiliacionPerteneciente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2_medico1.add(txtAfiliacionPerteneciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 520, 230, 30));
+        jPanel2_medico1.add(txtAfiliacionPerteneciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 520, 310, 30));
 
         jLabel_educacion3.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_educacion3.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
@@ -2794,14 +2785,14 @@ public class MainWindow extends javax.swing.JFrame {
         txtEspecialidadMedico1.setBackground(new java.awt.Color(255, 255, 255));
         txtEspecialidadMedico1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtEspecialidadMedico1.setForeground(new java.awt.Color(30, 29, 26));
-        txtEspecialidadMedico1.setText("**Especialidad** ");
+        txtEspecialidadMedico1.setText("CARDIOLOGO");
         txtEspecialidadMedico1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2_medico1.add(txtEspecialidadMedico1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 230, 30));
 
         txtPaisUniversidad1.setBackground(new java.awt.Color(231, 229, 218));
         txtPaisUniversidad1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtPaisUniversidad1.setForeground(new java.awt.Color(30, 29, 26));
-        txtPaisUniversidad1.setText("paisUniversidad");
+        txtPaisUniversidad1.setText("COSTA RICA");
         txtPaisUniversidad1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtPaisUniversidad1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2809,6 +2800,31 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
         jPanel2_medico1.add(txtPaisUniversidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 230, 30));
+
+        jButton3.setText("Atras");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel2_medico1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, -1, -1));
+
+        jButton11.setForeground(new java.awt.Color(0, 0, 0));
+        jButton11.setText("Calificar");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        jPanel2_medico1.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, -1, -1));
+
+        jButton18.setText("Enviar Correo");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+        jPanel2_medico1.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, -1, -1));
 
         jPanel_Central.add(jPanel2_medico1, "card3");
 
@@ -2823,17 +2839,19 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_InfoMedica2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel2_medico2.add(jLabel_InfoMedica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 17, 230, 28));
 
+        txtNombreMedico2.setEditable(false);
         txtNombreMedico2.setBackground(new java.awt.Color(231, 229, 218));
         txtNombreMedico2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtNombreMedico2.setForeground(new java.awt.Color(30, 29, 26));
-        txtNombreMedico2.setText("nombreMedico2");
+        txtNombreMedico2.setText("SHANNEN FABIOLA RETANA NUÑEZ");
         txtNombreMedico2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2_medico2.add(txtNombreMedico2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 230, 30));
 
+        txtCedulaMedico2.setEditable(false);
         txtCedulaMedico2.setBackground(new java.awt.Color(231, 229, 218));
         txtCedulaMedico2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtCedulaMedico2.setForeground(new java.awt.Color(30, 29, 26));
-        txtCedulaMedico2.setText("cedula");
+        txtCedulaMedico2.setText("115200145728");
         txtCedulaMedico2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtCedulaMedico2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2842,10 +2860,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico2.add(txtCedulaMedico2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 230, 30));
 
+        txtCorreoMedico2.setEditable(false);
         txtCorreoMedico2.setBackground(new java.awt.Color(231, 229, 218));
         txtCorreoMedico2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtCorreoMedico2.setForeground(new java.awt.Color(30, 29, 26));
-        txtCorreoMedico2.setText("correoElectronico");
+        txtCorreoMedico2.setText("shannen.retana.nunez@gmail.com");
         txtCorreoMedico2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtCorreoMedico2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2855,15 +2874,17 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel2_medico2.add(txtCorreoMedico2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 230, 30));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\pimie\\OneDrive\\Desktop\\fotosproyecto\\imagen doctor 2.png")); // NOI18N
         jLabel15.setText("FOTO???!");
         jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2_medico2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 160, 180));
+        jPanel2_medico2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, 170, 180));
 
+        txtSlogan1.setEditable(false);
         txtSlogan1.setBackground(new java.awt.Color(255, 255, 255));
         txtSlogan1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtSlogan1.setForeground(new java.awt.Color(30, 29, 26));
         txtSlogan1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtSlogan1.setText("\"slogan\"");
+        txtSlogan1.setText("\"MEJOR PREVENIR, QUE LUEGO LAMENTAR\"");
         txtSlogan1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2_medico2.add(txtSlogan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 270, 30));
 
@@ -2873,10 +2894,11 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_idioma1.setText("Idiomas:");
         jPanel2_medico2.add(jLabel_idioma1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 140, 30));
 
+        txtidiomas1.setEditable(false);
         txtidiomas1.setBackground(new java.awt.Color(231, 229, 218));
         txtidiomas1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtidiomas1.setForeground(new java.awt.Color(30, 29, 26));
-        txtidiomas1.setText("idioma1 - idioma2...");
+        txtidiomas1.setText("ESPAÑOL - INGLES - PORTUGUES");
         txtidiomas1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtidiomas1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2891,10 +2913,11 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_educacion4.setText("Educación:");
         jPanel2_medico2.add(jLabel_educacion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 140, 30));
 
+        txtTituloUniversitario1.setEditable(false);
         txtTituloUniversitario1.setBackground(new java.awt.Color(231, 229, 218));
         txtTituloUniversitario1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtTituloUniversitario1.setForeground(new java.awt.Color(30, 29, 26));
-        txtTituloUniversitario1.setText("tituloMedico");
+        txtTituloUniversitario1.setText("MEDICO CIRUJANO");
         txtTituloUniversitario1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtTituloUniversitario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2903,10 +2926,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico2.add(txtTituloUniversitario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 230, 30));
 
+        txtFinalizacionEstudios1.setEditable(false);
         txtFinalizacionEstudios1.setBackground(new java.awt.Color(231, 229, 218));
         txtFinalizacionEstudios1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtFinalizacionEstudios1.setForeground(new java.awt.Color(30, 29, 26));
-        txtFinalizacionEstudios1.setText("mes y año finalizacionEstudios");
+        txtFinalizacionEstudios1.setText("FEBRERO - 2018");
         txtFinalizacionEstudios1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtFinalizacionEstudios1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2915,10 +2939,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico2.add(txtFinalizacionEstudios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 230, 30));
 
+        txtUniversidadEstudio2.setEditable(false);
         txtUniversidadEstudio2.setBackground(new java.awt.Color(231, 229, 218));
         txtUniversidadEstudio2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtUniversidadEstudio2.setForeground(new java.awt.Color(30, 29, 26));
-        txtUniversidadEstudio2.setText("universidadEstudio");
+        txtUniversidadEstudio2.setText("UNIVERSIDAD DE COSTA RICA");
         txtUniversidadEstudio2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtUniversidadEstudio2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2927,10 +2952,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico2.add(txtUniversidadEstudio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 230, 30));
 
+        txtPaisUniversidad2.setEditable(false);
         txtPaisUniversidad2.setBackground(new java.awt.Color(231, 229, 218));
         txtPaisUniversidad2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtPaisUniversidad2.setForeground(new java.awt.Color(30, 29, 26));
-        txtPaisUniversidad2.setText("paisUniversidad");
+        txtPaisUniversidad2.setText("COSTA RICA");
         txtPaisUniversidad2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtPaisUniversidad2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2952,12 +2978,13 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_procedimientosRealizados1.setText("Procedimientos que realiza:");
         jPanel2_medico2.add(jLabel_procedimientosRealizados1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 200, 30));
 
+        jTextArea_procedimientoCosto1.setEditable(false);
         jTextArea_procedimientoCosto1.setBackground(new java.awt.Color(231, 229, 218));
         jTextArea_procedimientoCosto1.setColumns(20);
         jTextArea_procedimientoCosto1.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         jTextArea_procedimientoCosto1.setForeground(new java.awt.Color(30, 29, 26));
         jTextArea_procedimientoCosto1.setRows(5);
-        jTextArea_procedimientoCosto1.setText("Nombre - Costo\nNombre - Costo\nNombre - Costo");
+        jTextArea_procedimientoCosto1.setText("- HEMOGRAMA COMPLETO\n- URINALISIS \n- EXAMEN DE SANGRE");
         jScrollPane3.setViewportView(jTextArea_procedimientoCosto1);
 
         jPanel2_medico2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 300, 90));
@@ -2966,14 +2993,39 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_Afiliacion1.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_Afiliacion1.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_Afiliacion1.setText("Afiliación:");
-        jPanel2_medico2.add(jLabel_Afiliacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 490, 80, 30));
+        jPanel2_medico2.add(jLabel_Afiliacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, 80, 30));
 
+        txtAfiliacionPerteneciente1.setEditable(false);
         txtAfiliacionPerteneciente1.setBackground(new java.awt.Color(255, 255, 255));
         txtAfiliacionPerteneciente1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtAfiliacionPerteneciente1.setForeground(new java.awt.Color(30, 29, 26));
-        txtAfiliacionPerteneciente1.setText("Colegio Medico Cirujanos...");
+        txtAfiliacionPerteneciente1.setText("COLEGIO DE MEDICOS Y CIRUJANOS COSTA RICA");
         txtAfiliacionPerteneciente1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2_medico2.add(txtAfiliacionPerteneciente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 520, 230, 30));
+        jPanel2_medico2.add(txtAfiliacionPerteneciente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 520, 310, 30));
+
+        jButton5.setText("Atras");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel2_medico2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, -1, -1));
+
+        jButton12.setText("Calificar");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        jPanel2_medico2.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, -1, -1));
+
+        jButton17.setText("Enviar Correo");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+        jPanel2_medico2.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, -1, -1));
 
         jPanel_Central.add(jPanel2_medico2, "card9");
 
@@ -2988,17 +3040,19 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_InfoMedica3.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel2_medico3.add(jLabel_InfoMedica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 17, 230, 28));
 
+        txtNombreMedico3.setEditable(false);
         txtNombreMedico3.setBackground(new java.awt.Color(231, 229, 218));
         txtNombreMedico3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtNombreMedico3.setForeground(new java.awt.Color(30, 29, 26));
-        txtNombreMedico3.setText("nombreMedico3");
+        txtNombreMedico3.setText("ETHAN ACKERMAN ");
         txtNombreMedico3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2_medico3.add(txtNombreMedico3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 230, 30));
 
+        txtCedulaMedico3.setEditable(false);
         txtCedulaMedico3.setBackground(new java.awt.Color(231, 229, 218));
         txtCedulaMedico3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtCedulaMedico3.setForeground(new java.awt.Color(30, 29, 26));
-        txtCedulaMedico3.setText("cedula");
+        txtCedulaMedico3.setText("115200145728");
         txtCedulaMedico3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtCedulaMedico3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3007,10 +3061,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico3.add(txtCedulaMedico3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 230, 30));
 
+        txtCorreoMedico3.setEditable(false);
         txtCorreoMedico3.setBackground(new java.awt.Color(231, 229, 218));
         txtCorreoMedico3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtCorreoMedico3.setForeground(new java.awt.Color(30, 29, 26));
-        txtCorreoMedico3.setText("correoElectronico");
+        txtCorreoMedico3.setText("ethan.ackerman@gmail.com");
         txtCorreoMedico3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtCorreoMedico3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3020,17 +3075,19 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel2_medico3.add(txtCorreoMedico3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 230, 30));
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\pimie\\OneDrive\\Desktop\\fotosproyecto\\Imagen doctor 3.png")); // NOI18N
         jLabel16.setText("FOTO???!");
         jLabel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2_medico3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 160, 180));
+        jPanel2_medico3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, 150, 180));
 
+        txtSlogan2.setEditable(false);
         txtSlogan2.setBackground(new java.awt.Color(255, 255, 255));
         txtSlogan2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtSlogan2.setForeground(new java.awt.Color(30, 29, 26));
         txtSlogan2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtSlogan2.setText("\"slogan\"");
+        txtSlogan2.setText("\"PROTEGER LO QUE COMES ES DE SABIOS\"");
         txtSlogan2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2_medico3.add(txtSlogan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 270, 30));
+        jPanel2_medico3.add(txtSlogan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 270, 30));
 
         jLabel_idioma2.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_idioma2.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
@@ -3038,10 +3095,11 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_idioma2.setText("Idiomas:");
         jPanel2_medico3.add(jLabel_idioma2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 140, 30));
 
+        txtidiomas2.setEditable(false);
         txtidiomas2.setBackground(new java.awt.Color(231, 229, 218));
         txtidiomas2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtidiomas2.setForeground(new java.awt.Color(30, 29, 26));
-        txtidiomas2.setText("idioma1 - idioma2...");
+        txtidiomas2.setText("INGLES - ESPAÑOL ");
         txtidiomas2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtidiomas2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3056,10 +3114,11 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_educacion5.setText("Educación:");
         jPanel2_medico3.add(jLabel_educacion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 140, 30));
 
+        txtTituloUniversitario2.setEditable(false);
         txtTituloUniversitario2.setBackground(new java.awt.Color(231, 229, 218));
         txtTituloUniversitario2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtTituloUniversitario2.setForeground(new java.awt.Color(30, 29, 26));
-        txtTituloUniversitario2.setText("tituloMedico");
+        txtTituloUniversitario2.setText("NUTRIOLOGO");
         txtTituloUniversitario2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtTituloUniversitario2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3068,10 +3127,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico3.add(txtTituloUniversitario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 230, 30));
 
+        txtFinalizacionEstudios2.setEditable(false);
         txtFinalizacionEstudios2.setBackground(new java.awt.Color(231, 229, 218));
         txtFinalizacionEstudios2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtFinalizacionEstudios2.setForeground(new java.awt.Color(30, 29, 26));
-        txtFinalizacionEstudios2.setText("mes y año finalizacionEstudios");
+        txtFinalizacionEstudios2.setText("MARZO - 2015");
         txtFinalizacionEstudios2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtFinalizacionEstudios2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3080,10 +3140,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico3.add(txtFinalizacionEstudios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 230, 30));
 
+        txtUniversidadEstudio3.setEditable(false);
         txtUniversidadEstudio3.setBackground(new java.awt.Color(231, 229, 218));
         txtUniversidadEstudio3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtUniversidadEstudio3.setForeground(new java.awt.Color(30, 29, 26));
-        txtUniversidadEstudio3.setText("universidadEstudio");
+        txtUniversidadEstudio3.setText("BYU UNIVERTSITY");
         txtUniversidadEstudio3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtUniversidadEstudio3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3092,10 +3153,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico3.add(txtUniversidadEstudio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 230, 30));
 
+        txtPaisUniversidad3.setEditable(false);
         txtPaisUniversidad3.setBackground(new java.awt.Color(231, 229, 218));
         txtPaisUniversidad3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtPaisUniversidad3.setForeground(new java.awt.Color(30, 29, 26));
-        txtPaisUniversidad3.setText("paisUniversidad");
+        txtPaisUniversidad3.setText("ESTADOS UNIDOS");
         txtPaisUniversidad3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtPaisUniversidad3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3107,7 +3169,7 @@ public class MainWindow extends javax.swing.JFrame {
         txtEspecialidadMedico3.setBackground(new java.awt.Color(255, 255, 255));
         txtEspecialidadMedico3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtEspecialidadMedico3.setForeground(new java.awt.Color(30, 29, 26));
-        txtEspecialidadMedico3.setText("**Especialidad** ");
+        txtEspecialidadMedico3.setText("NUTRIOLOGO");
         txtEspecialidadMedico3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2_medico3.add(txtEspecialidadMedico3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 230, 30));
 
@@ -3117,12 +3179,13 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_procedimientosRealizados2.setText("Procedimientos que realiza:");
         jPanel2_medico3.add(jLabel_procedimientosRealizados2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 200, 30));
 
+        jTextArea_procedimientoCosto2.setEditable(false);
         jTextArea_procedimientoCosto2.setBackground(new java.awt.Color(231, 229, 218));
         jTextArea_procedimientoCosto2.setColumns(20);
         jTextArea_procedimientoCosto2.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         jTextArea_procedimientoCosto2.setForeground(new java.awt.Color(30, 29, 26));
         jTextArea_procedimientoCosto2.setRows(5);
-        jTextArea_procedimientoCosto2.setText("Nombre - Costo\nNombre - Costo\nNombre - Costo");
+        jTextArea_procedimientoCosto2.setText("- RECUENTO SANGUINEO\n- MONITOREO DE TIROIDES\n- ANALISIS DE HORMONAS ");
         jScrollPane4.setViewportView(jTextArea_procedimientoCosto2);
 
         jPanel2_medico3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 300, 90));
@@ -3131,14 +3194,39 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_Afiliacion2.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_Afiliacion2.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_Afiliacion2.setText("Afiliación:");
-        jPanel2_medico3.add(jLabel_Afiliacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 490, 80, 30));
+        jPanel2_medico3.add(jLabel_Afiliacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, 80, 30));
 
+        txtAfiliacionPerteneciente2.setEditable(false);
         txtAfiliacionPerteneciente2.setBackground(new java.awt.Color(255, 255, 255));
         txtAfiliacionPerteneciente2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtAfiliacionPerteneciente2.setForeground(new java.awt.Color(30, 29, 26));
-        txtAfiliacionPerteneciente2.setText("Colegio Medico Cirujanos...");
+        txtAfiliacionPerteneciente2.setText("COLEGIO DE PROFESIONALES EN NUTRICION");
         txtAfiliacionPerteneciente2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2_medico3.add(txtAfiliacionPerteneciente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 520, 230, 30));
+        jPanel2_medico3.add(txtAfiliacionPerteneciente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, 300, 30));
+
+        jButton6.setText("Atras");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel2_medico3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, -1, -1));
+
+        jButton13.setText("Calificar");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        jPanel2_medico3.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, -1, -1));
+
+        jButton16.setText("Enviar Correo");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        jPanel2_medico3.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, -1, -1));
 
         jPanel_Central.add(jPanel2_medico3, "card10");
 
@@ -3153,17 +3241,19 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_InfoMedica4.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel2_medico4.add(jLabel_InfoMedica4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 17, 230, 28));
 
+        txtNombreMedico4.setEditable(false);
         txtNombreMedico4.setBackground(new java.awt.Color(231, 229, 218));
         txtNombreMedico4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtNombreMedico4.setForeground(new java.awt.Color(30, 29, 26));
-        txtNombreMedico4.setText("nombreMedico4");
+        txtNombreMedico4.setText("LUCAS ANDRES DIAZ DIAZ");
         txtNombreMedico4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2_medico4.add(txtNombreMedico4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 230, 30));
 
+        txtCedulaMedico4.setEditable(false);
         txtCedulaMedico4.setBackground(new java.awt.Color(231, 229, 218));
         txtCedulaMedico4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtCedulaMedico4.setForeground(new java.awt.Color(30, 29, 26));
-        txtCedulaMedico4.setText("cedula");
+        txtCedulaMedico4.setText("115357890");
         txtCedulaMedico4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtCedulaMedico4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3172,10 +3262,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico4.add(txtCedulaMedico4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 230, 30));
 
+        txtCorreoMedico4.setEditable(false);
         txtCorreoMedico4.setBackground(new java.awt.Color(231, 229, 218));
         txtCorreoMedico4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtCorreoMedico4.setForeground(new java.awt.Color(30, 29, 26));
-        txtCorreoMedico4.setText("correoElectronico");
+        txtCorreoMedico4.setText("lucas.diaz@gmail.com");
         txtCorreoMedico4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtCorreoMedico4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3185,15 +3276,17 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel2_medico4.add(txtCorreoMedico4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 230, 30));
 
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\pimie\\OneDrive\\Desktop\\fotosproyecto\\imagen doctor 4.png")); // NOI18N
         jLabel17.setText("FOTO???!");
         jLabel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2_medico4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 160, 180));
+        jPanel2_medico4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 150, 180));
 
+        txtSlogan3.setEditable(false);
         txtSlogan3.setBackground(new java.awt.Color(255, 255, 255));
         txtSlogan3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtSlogan3.setForeground(new java.awt.Color(30, 29, 26));
         txtSlogan3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtSlogan3.setText("\"slogan\"");
+        txtSlogan3.setText("\"LO EXTERIOR TAMBIEN ES IMPORTANTE\"");
         txtSlogan3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2_medico4.add(txtSlogan3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 270, 30));
 
@@ -3203,10 +3296,11 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_idioma3.setText("Idiomas:");
         jPanel2_medico4.add(jLabel_idioma3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 140, 30));
 
+        txtidiomas3.setEditable(false);
         txtidiomas3.setBackground(new java.awt.Color(231, 229, 218));
         txtidiomas3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtidiomas3.setForeground(new java.awt.Color(30, 29, 26));
-        txtidiomas3.setText("idioma1 - idioma2...");
+        txtidiomas3.setText("INGLES - ESPAÑOL ");
         txtidiomas3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtidiomas3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3221,10 +3315,11 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_educacion6.setText("Educación:");
         jPanel2_medico4.add(jLabel_educacion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 140, 30));
 
+        txtTituloUniversitario3.setEditable(false);
         txtTituloUniversitario3.setBackground(new java.awt.Color(231, 229, 218));
         txtTituloUniversitario3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtTituloUniversitario3.setForeground(new java.awt.Color(30, 29, 26));
-        txtTituloUniversitario3.setText("tituloMedico");
+        txtTituloUniversitario3.setText("DERMATOLOGIA ");
         txtTituloUniversitario3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtTituloUniversitario3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3233,10 +3328,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico4.add(txtTituloUniversitario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 230, 30));
 
+        txtFinalizacionEstudios3.setEditable(false);
         txtFinalizacionEstudios3.setBackground(new java.awt.Color(231, 229, 218));
         txtFinalizacionEstudios3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtFinalizacionEstudios3.setForeground(new java.awt.Color(30, 29, 26));
-        txtFinalizacionEstudios3.setText("mes y año finalizacionEstudios");
+        txtFinalizacionEstudios3.setText("FEBRERO - 2018");
         txtFinalizacionEstudios3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtFinalizacionEstudios3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3245,10 +3341,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico4.add(txtFinalizacionEstudios3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 230, 30));
 
+        txtUniversidadEstudio4.setEditable(false);
         txtUniversidadEstudio4.setBackground(new java.awt.Color(231, 229, 218));
         txtUniversidadEstudio4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtUniversidadEstudio4.setForeground(new java.awt.Color(30, 29, 26));
-        txtUniversidadEstudio4.setText("universidadEstudio");
+        txtUniversidadEstudio4.setText("UNIVERSIDAD SANTA PAULA");
         txtUniversidadEstudio4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtUniversidadEstudio4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3257,10 +3354,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico4.add(txtUniversidadEstudio4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 230, 30));
 
+        txtPaisUniversidad4.setEditable(false);
         txtPaisUniversidad4.setBackground(new java.awt.Color(231, 229, 218));
         txtPaisUniversidad4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtPaisUniversidad4.setForeground(new java.awt.Color(30, 29, 26));
-        txtPaisUniversidad4.setText("paisUniversidad");
+        txtPaisUniversidad4.setText("COSTA RICA");
         txtPaisUniversidad4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtPaisUniversidad4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3269,10 +3367,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel2_medico4.add(txtPaisUniversidad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 230, 30));
 
+        txtEspecialidadMedico4.setEditable(false);
         txtEspecialidadMedico4.setBackground(new java.awt.Color(255, 255, 255));
         txtEspecialidadMedico4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtEspecialidadMedico4.setForeground(new java.awt.Color(30, 29, 26));
-        txtEspecialidadMedico4.setText("**Especialidad** ");
+        txtEspecialidadMedico4.setText("DERMATOLOGIA");
         txtEspecialidadMedico4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2_medico4.add(txtEspecialidadMedico4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 230, 30));
 
@@ -3282,12 +3381,13 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_procedimientosRealizados3.setText("Procedimientos que realiza:");
         jPanel2_medico4.add(jLabel_procedimientosRealizados3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 200, 30));
 
+        jTextArea_procedimientoCosto3.setEditable(false);
         jTextArea_procedimientoCosto3.setBackground(new java.awt.Color(231, 229, 218));
         jTextArea_procedimientoCosto3.setColumns(20);
         jTextArea_procedimientoCosto3.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         jTextArea_procedimientoCosto3.setForeground(new java.awt.Color(30, 29, 26));
         jTextArea_procedimientoCosto3.setRows(5);
-        jTextArea_procedimientoCosto3.setText("Nombre - Costo\nNombre - Costo\nNombre - Costo");
+        jTextArea_procedimientoCosto3.setText("- TRICOGRAMA DIGITAL\n- ACARO TEST\n-BUSQUEDA DE ACARO DEMODEX");
         jScrollPane5.setViewportView(jTextArea_procedimientoCosto3);
 
         jPanel2_medico4.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 300, 90));
@@ -3296,14 +3396,39 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_Afiliacion3.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_Afiliacion3.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_Afiliacion3.setText("Afiliación:");
-        jPanel2_medico4.add(jLabel_Afiliacion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 490, 80, 30));
+        jPanel2_medico4.add(jLabel_Afiliacion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, 80, 30));
 
+        txtAfiliacionPerteneciente3.setEditable(false);
         txtAfiliacionPerteneciente3.setBackground(new java.awt.Color(255, 255, 255));
         txtAfiliacionPerteneciente3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtAfiliacionPerteneciente3.setForeground(new java.awt.Color(30, 29, 26));
-        txtAfiliacionPerteneciente3.setText("Colegio Medico Cirujanos...");
+        txtAfiliacionPerteneciente3.setText("COLEGIO DE MEDICOSY CIRUJANOS COSTA RICA");
         txtAfiliacionPerteneciente3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2_medico4.add(txtAfiliacionPerteneciente3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 520, 230, 30));
+        jPanel2_medico4.add(txtAfiliacionPerteneciente3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 520, 300, 30));
+
+        jButton7.setText("Atras");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel2_medico4.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, -1, -1));
+
+        jButton14.setText("Calificar");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+        jPanel2_medico4.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, -1, -1));
+
+        jButton15.setText("Enviar correo");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+        jPanel2_medico4.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, -1, -1));
 
         jPanel_Central.add(jPanel2_medico4, "card11");
 
@@ -3327,10 +3452,12 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_filtroNumeroClinica.setText("Número Clínica:");
         jPanel3_filtroClinica.add(jLabel_filtroNumeroClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 120, 30));
 
+        txtNumeroClinica1.setEditable(false);
         txtNumeroClinica1.setBackground(new java.awt.Color(255, 255, 255));
         txtNumeroClinica1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtNumeroClinica1.setForeground(new java.awt.Color(30, 29, 26));
         txtNumeroClinica1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumeroClinica1.setText("2234-4567");
         txtNumeroClinica1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtNumeroClinica1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3357,10 +3484,12 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_filtroNombreClinica.setText("Nombre Clínica:");
         jPanel3_filtroClinica.add(jLabel_filtroNombreClinica, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 120, 30));
 
+        txtnombreClinica1.setEditable(false);
         txtnombreClinica1.setBackground(new java.awt.Color(255, 255, 255));
         txtnombreClinica1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtnombreClinica1.setForeground(new java.awt.Color(30, 29, 26));
         txtnombreClinica1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtnombreClinica1.setText("CLINICA SAN JOSE");
         txtnombreClinica1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtnombreClinica1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3369,10 +3498,12 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel3_filtroClinica.add(txtnombreClinica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 200, 30));
 
+        txtnombreClinica2.setEditable(false);
         txtnombreClinica2.setBackground(new java.awt.Color(255, 255, 255));
         txtnombreClinica2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtnombreClinica2.setForeground(new java.awt.Color(30, 29, 26));
         txtnombreClinica2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtnombreClinica2.setText("CLINICA GRANADILLA");
         txtnombreClinica2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtnombreClinica2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3381,10 +3512,12 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel3_filtroClinica.add(txtnombreClinica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 200, 30));
 
+        txtNumeroClinica2.setEditable(false);
         txtNumeroClinica2.setBackground(new java.awt.Color(255, 255, 255));
         txtNumeroClinica2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtNumeroClinica2.setForeground(new java.awt.Color(30, 29, 26));
         txtNumeroClinica2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumeroClinica2.setText("2254-8899");
         txtNumeroClinica2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtNumeroClinica2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3393,10 +3526,12 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel3_filtroClinica.add(txtNumeroClinica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 130, 30));
 
+        txtnombreClinica3.setEditable(false);
         txtnombreClinica3.setBackground(new java.awt.Color(255, 255, 255));
         txtnombreClinica3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtnombreClinica3.setForeground(new java.awt.Color(30, 29, 26));
         txtnombreClinica3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtnombreClinica3.setText("CLINICA DESAMPARADOS");
         txtnombreClinica3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtnombreClinica3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3405,10 +3540,12 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel3_filtroClinica.add(txtnombreClinica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 200, 30));
 
+        txtNumeroClinica3.setEditable(false);
         txtNumeroClinica3.setBackground(new java.awt.Color(255, 255, 255));
         txtNumeroClinica3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtNumeroClinica3.setForeground(new java.awt.Color(30, 29, 26));
         txtNumeroClinica3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumeroClinica3.setText("22344567");
         txtNumeroClinica3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtNumeroClinica3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3417,10 +3554,12 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel3_filtroClinica.add(txtNumeroClinica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 130, 30));
 
+        txtnombreClinica4.setEditable(false);
         txtnombreClinica4.setBackground(new java.awt.Color(255, 255, 255));
         txtnombreClinica4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtnombreClinica4.setForeground(new java.awt.Color(30, 29, 26));
         txtnombreClinica4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtnombreClinica4.setText("CLINICA COSTA");
         txtnombreClinica4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtnombreClinica4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3429,10 +3568,12 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel3_filtroClinica.add(txtnombreClinica4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 200, 30));
 
+        txtNumeroClinica4.setEditable(false);
         txtNumeroClinica4.setBackground(new java.awt.Color(255, 255, 255));
         txtNumeroClinica4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtNumeroClinica4.setForeground(new java.awt.Color(30, 29, 26));
         txtNumeroClinica4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumeroClinica4.setText("2244-6789");
         txtNumeroClinica4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtNumeroClinica4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3493,39 +3634,40 @@ public class MainWindow extends javax.swing.JFrame {
         txtDistrito1.setBackground(new java.awt.Color(231, 229, 218));
         txtDistrito1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtDistrito1.setForeground(new java.awt.Color(30, 29, 26));
+        txtDistrito1.setText("SAN JOSE");
         txtDistrito1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica1.add(txtDistrito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 490, 170, 30));
+        jPanel3_clinica1.add(txtDistrito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 80, 30));
 
         txtDireccionGeneral1.setBackground(new java.awt.Color(231, 229, 218));
         txtDireccionGeneral1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtDireccionGeneral1.setForeground(new java.awt.Color(30, 29, 26));
-        txtDireccionGeneral1.setText("direccionGeneral");
+        txtDireccionGeneral1.setText("AVENIDA #1234");
         txtDireccionGeneral1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica1.add(txtDireccionGeneral1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 340, 30));
+        jPanel3_clinica1.add(txtDireccionGeneral1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 340, 30));
 
         jLabel_infoContacto1.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_infoContacto1.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_infoContacto1.setForeground(new java.awt.Color(30, 29, 26));
-        jLabel_infoContacto1.setText("Información de Contacto:");
+        jLabel_infoContacto1.setText("Numero de Contacto:");
         jPanel3_clinica1.add(jLabel_infoContacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 180, 30));
 
         jLabel_direccion1.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_direccion1.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_direccion1.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_direccion1.setText("Dirección:");
-        jPanel3_clinica1.add(jLabel_direccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 140, 30));
+        jPanel3_clinica1.add(jLabel_direccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 140, 30));
 
         txtnumeroClinica1.setBackground(new java.awt.Color(231, 229, 218));
         txtnumeroClinica1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtnumeroClinica1.setForeground(new java.awt.Color(30, 29, 26));
-        txtnumeroClinica1.setText("NumeroClinica");
+        txtnumeroClinica1.setText("2234-4567");
         txtnumeroClinica1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3_clinica1.add(txtnumeroClinica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 230, 30));
 
         txtNombreClinica1.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreClinica1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtNombreClinica1.setForeground(new java.awt.Color(30, 29, 26));
-        txtNombreClinica1.setText("**NombreClinica1**");
+        txtNombreClinica1.setText("CLINICA SAN JOSE ");
         txtNombreClinica1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3_clinica1.add(txtNombreClinica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 230, 30));
 
@@ -3533,36 +3675,47 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_distrito1.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_distrito1.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_distrito1.setText("Distrito:");
-        jPanel3_clinica1.add(jLabel_distrito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 80, 30));
+        jPanel3_clinica1.add(jLabel_distrito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 80, 30));
 
         jLabel_provincia1.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_provincia1.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_provincia1.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_provincia1.setText("Provincia:");
-        jPanel3_clinica1.add(jLabel_provincia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 90, 30));
+        jPanel3_clinica1.add(jLabel_provincia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 90, 30));
 
         jLabel_canton1.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_canton1.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_canton1.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_canton1.setText("Canton:");
-        jPanel3_clinica1.add(jLabel_canton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 80, 30));
+        jPanel3_clinica1.add(jLabel_canton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 80, 30));
 
         txtProvincia1.setBackground(new java.awt.Color(231, 229, 218));
         txtProvincia1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtProvincia1.setForeground(new java.awt.Color(30, 29, 26));
+        txtProvincia1.setText("SAN JOSE");
         txtProvincia1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica1.add(txtProvincia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 170, 30));
+        jPanel3_clinica1.add(txtProvincia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 80, 30));
 
         txtCanton1.setBackground(new java.awt.Color(231, 229, 218));
         txtCanton1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtCanton1.setForeground(new java.awt.Color(30, 29, 26));
+        txtCanton1.setText("SAN JOSE");
         txtCanton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica1.add(txtCanton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 170, 30));
+        jPanel3_clinica1.add(txtCanton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 80, 30));
 
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\pimie\\OneDrive\\Desktop\\fotosproyecto\\CLINICA 1.png")); // NOI18N
         jLabel18.setText("FOTO???!");
         jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3_clinica1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 190, 180));
+        jPanel3_clinica1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 190, 180));
+
+        jButton4.setText("Atras");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel3_clinica1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
 
         jPanel_Central.add(jPanel3_clinica1, "card12");
 
@@ -3577,79 +3730,97 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_InfoClinica2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel3_clinica2.add(jLabel_InfoClinica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 230, 28));
 
+        txtNombreClinica2.setEditable(false);
         txtNombreClinica2.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreClinica2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtNombreClinica2.setForeground(new java.awt.Color(30, 29, 26));
-        txtNombreClinica2.setText("**NombreClinica2**");
+        txtNombreClinica2.setText("CLINICA GRANADILLA ");
         txtNombreClinica2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel3_clinica2.add(txtNombreClinica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 230, 30));
+        jPanel3_clinica2.add(txtNombreClinica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 230, 30));
 
         jLabel_infoContacto2.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_infoContacto2.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_infoContacto2.setForeground(new java.awt.Color(30, 29, 26));
-        jLabel_infoContacto2.setText("Información de Contacto:");
+        jLabel_infoContacto2.setText("Numero de Contacto:");
         jPanel3_clinica2.add(jLabel_infoContacto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 180, 30));
 
+        txtnumeroClinica2.setEditable(false);
         txtnumeroClinica2.setBackground(new java.awt.Color(231, 229, 218));
         txtnumeroClinica2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtnumeroClinica2.setForeground(new java.awt.Color(30, 29, 26));
-        txtnumeroClinica2.setText("NumeroClinica");
+        txtnumeroClinica2.setText("2254-8899");
         txtnumeroClinica2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3_clinica2.add(txtnumeroClinica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 230, 30));
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\pimie\\OneDrive\\Desktop\\fotosproyecto\\CLINICA2.png")); // NOI18N
         jLabel19.setText("FOTO???!");
         jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3_clinica2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 190, 180));
+        jPanel3_clinica2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 190, 180));
 
         jLabel_direccion2.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_direccion2.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_direccion2.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_direccion2.setText("Dirección:");
-        jPanel3_clinica2.add(jLabel_direccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 140, 30));
+        jPanel3_clinica2.add(jLabel_direccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 140, 30));
 
+        txtDireccionGeneral2.setEditable(false);
         txtDireccionGeneral2.setBackground(new java.awt.Color(231, 229, 218));
         txtDireccionGeneral2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtDireccionGeneral2.setForeground(new java.awt.Color(30, 29, 26));
-        txtDireccionGeneral2.setText("direccionGeneral");
+        txtDireccionGeneral2.setText("25 MTS NORTE,  50 MTS SUR DE LA IGLESIA CATOLICA");
         txtDireccionGeneral2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica2.add(txtDireccionGeneral2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 340, 30));
+        jPanel3_clinica2.add(txtDireccionGeneral2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 340, 30));
 
         jLabel_provincia2.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_provincia2.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_provincia2.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_provincia2.setText("Provincia:");
-        jPanel3_clinica2.add(jLabel_provincia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 90, 30));
+        jPanel3_clinica2.add(jLabel_provincia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 90, 30));
 
+        txtProvincia2.setEditable(false);
         txtProvincia2.setBackground(new java.awt.Color(231, 229, 218));
         txtProvincia2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtProvincia2.setForeground(new java.awt.Color(30, 29, 26));
+        txtProvincia2.setText("CURRIDABAT");
         txtProvincia2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica2.add(txtProvincia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 170, 30));
+        jPanel3_clinica2.add(txtProvincia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 90, 30));
 
         jLabel_canton2.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_canton2.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_canton2.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_canton2.setText("Canton:");
-        jPanel3_clinica2.add(jLabel_canton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 80, 30));
+        jPanel3_clinica2.add(jLabel_canton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 80, 30));
 
+        txtCanton2.setEditable(false);
         txtCanton2.setBackground(new java.awt.Color(231, 229, 218));
         txtCanton2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtCanton2.setForeground(new java.awt.Color(30, 29, 26));
+        txtCanton2.setText("GRANADILLA NORTE");
         txtCanton2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica2.add(txtCanton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 170, 30));
+        jPanel3_clinica2.add(txtCanton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, 130, 30));
 
         jLabel_distrito2.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_distrito2.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_distrito2.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_distrito2.setText("Distrito:");
-        jPanel3_clinica2.add(jLabel_distrito2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 80, 30));
+        jPanel3_clinica2.add(jLabel_distrito2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, 80, 30));
 
+        txtDistrito2.setEditable(false);
         txtDistrito2.setBackground(new java.awt.Color(231, 229, 218));
         txtDistrito2.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtDistrito2.setForeground(new java.awt.Color(30, 29, 26));
+        txtDistrito2.setText("SAN JOSE");
         txtDistrito2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica2.add(txtDistrito2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 490, 170, 30));
+        jPanel3_clinica2.add(txtDistrito2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 80, 30));
+
+        jButton8.setText("Atras");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel3_clinica2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, -1, -1));
 
         jPanel_Central.add(jPanel3_clinica2, "card13");
 
@@ -3664,79 +3835,97 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_InfoClinica3.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel3_clinica3.add(jLabel_InfoClinica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 230, 28));
 
+        txtNombreClinica3.setEditable(false);
         txtNombreClinica3.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreClinica3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtNombreClinica3.setForeground(new java.awt.Color(30, 29, 26));
-        txtNombreClinica3.setText("**NombreClinica3**");
+        txtNombreClinica3.setText("CLINICA DESAMPARADOS");
         txtNombreClinica3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel3_clinica3.add(txtNombreClinica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 230, 30));
+        jPanel3_clinica3.add(txtNombreClinica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 190, 30));
 
         jLabel_infoContacto3.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_infoContacto3.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_infoContacto3.setForeground(new java.awt.Color(30, 29, 26));
-        jLabel_infoContacto3.setText("Información de Contacto:");
+        jLabel_infoContacto3.setText("Numero de Contacto:");
         jPanel3_clinica3.add(jLabel_infoContacto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 180, 30));
 
+        txtnumeroClinica3.setEditable(false);
         txtnumeroClinica3.setBackground(new java.awt.Color(231, 229, 218));
         txtnumeroClinica3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtnumeroClinica3.setForeground(new java.awt.Color(30, 29, 26));
-        txtnumeroClinica3.setText("NumeroClinica");
+        txtnumeroClinica3.setText("2234-4563");
         txtnumeroClinica3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica3.add(txtnumeroClinica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 230, 30));
+        jPanel3_clinica3.add(txtnumeroClinica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 190, 30));
 
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\pimie\\OneDrive\\Desktop\\fotosproyecto\\CLINICA 3.png")); // NOI18N
         jLabel20.setText("FOTO???!");
         jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3_clinica3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 190, 180));
+        jPanel3_clinica3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 190, 180));
 
         jLabel_direccion3.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_direccion3.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_direccion3.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_direccion3.setText("Dirección:");
-        jPanel3_clinica3.add(jLabel_direccion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 140, 30));
+        jPanel3_clinica3.add(jLabel_direccion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 140, 30));
 
+        txtDireccionGeneral3.setEditable(false);
         txtDireccionGeneral3.setBackground(new java.awt.Color(231, 229, 218));
         txtDireccionGeneral3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtDireccionGeneral3.setForeground(new java.awt.Color(30, 29, 26));
-        txtDireccionGeneral3.setText("direccionGeneral");
+        txtDireccionGeneral3.setText("100 MTS SUR DE MCDONALDS DEL CENTRO DE DESAMPARADOS");
         txtDireccionGeneral3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica3.add(txtDireccionGeneral3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 340, 30));
+        jPanel3_clinica3.add(txtDireccionGeneral3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 400, 30));
 
         jLabel_provincia3.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_provincia3.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_provincia3.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_provincia3.setText("Provincia:");
-        jPanel3_clinica3.add(jLabel_provincia3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 90, 30));
+        jPanel3_clinica3.add(jLabel_provincia3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 90, 30));
 
+        txtProvincia3.setEditable(false);
         txtProvincia3.setBackground(new java.awt.Color(231, 229, 218));
         txtProvincia3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtProvincia3.setForeground(new java.awt.Color(30, 29, 26));
+        txtProvincia3.setText("DESAMPARADOS");
         txtProvincia3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica3.add(txtProvincia3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 170, 30));
+        jPanel3_clinica3.add(txtProvincia3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 120, 30));
 
         jLabel_canton3.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_canton3.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_canton3.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_canton3.setText("Canton:");
-        jPanel3_clinica3.add(jLabel_canton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 80, 30));
+        jPanel3_clinica3.add(jLabel_canton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 80, 30));
 
+        txtCanton3.setEditable(false);
         txtCanton3.setBackground(new java.awt.Color(231, 229, 218));
         txtCanton3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtCanton3.setForeground(new java.awt.Color(30, 29, 26));
+        txtCanton3.setText("SAN ANTONIO");
         txtCanton3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica3.add(txtCanton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 170, 30));
+        jPanel3_clinica3.add(txtCanton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 100, 30));
 
         jLabel_distrito3.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_distrito3.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_distrito3.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_distrito3.setText("Distrito:");
-        jPanel3_clinica3.add(jLabel_distrito3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 80, 30));
+        jPanel3_clinica3.add(jLabel_distrito3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, 80, 30));
 
+        txtDistrito3.setEditable(false);
         txtDistrito3.setBackground(new java.awt.Color(231, 229, 218));
         txtDistrito3.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtDistrito3.setForeground(new java.awt.Color(30, 29, 26));
+        txtDistrito3.setText("SAN JOSE");
         txtDistrito3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica3.add(txtDistrito3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 490, 170, 30));
+        jPanel3_clinica3.add(txtDistrito3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 80, 30));
+
+        jButton9.setText("Atras");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        jPanel3_clinica3.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, -1, -1));
 
         jPanel_Central.add(jPanel3_clinica3, "card14");
 
@@ -3751,79 +3940,97 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel_InfoClinica4.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel3_clinica4.add(jLabel_InfoClinica4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 230, 28));
 
+        txtNombreClinica4.setEditable(false);
         txtNombreClinica4.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreClinica4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtNombreClinica4.setForeground(new java.awt.Color(30, 29, 26));
-        txtNombreClinica4.setText("**NombreClinica4**");
+        txtNombreClinica4.setText("CLINICA COSTA");
         txtNombreClinica4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3_clinica4.add(txtNombreClinica4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 230, 30));
 
         jLabel_infoContacto4.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_infoContacto4.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_infoContacto4.setForeground(new java.awt.Color(30, 29, 26));
-        jLabel_infoContacto4.setText("Información de Contacto:");
+        jLabel_infoContacto4.setText("Numero de Contacto:");
         jPanel3_clinica4.add(jLabel_infoContacto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 180, 30));
 
+        txtnumeroClinica4.setEditable(false);
         txtnumeroClinica4.setBackground(new java.awt.Color(231, 229, 218));
         txtnumeroClinica4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtnumeroClinica4.setForeground(new java.awt.Color(30, 29, 26));
-        txtnumeroClinica4.setText("NumeroClinica");
+        txtnumeroClinica4.setText("2244-6789");
         txtnumeroClinica4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3_clinica4.add(txtnumeroClinica4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 230, 30));
 
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\pimie\\OneDrive\\Desktop\\fotosproyecto\\CLINICA4.png")); // NOI18N
         jLabel21.setText("FOTO???!");
         jLabel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3_clinica4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 190, 180));
+        jPanel3_clinica4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 190, 180));
 
         jLabel_direccion4.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_direccion4.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_direccion4.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_direccion4.setText("Dirección:");
-        jPanel3_clinica4.add(jLabel_direccion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 140, 30));
+        jPanel3_clinica4.add(jLabel_direccion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 140, 30));
 
+        txtDireccionGeneral4.setEditable(false);
         txtDireccionGeneral4.setBackground(new java.awt.Color(231, 229, 218));
         txtDireccionGeneral4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtDireccionGeneral4.setForeground(new java.awt.Color(30, 29, 26));
-        txtDireccionGeneral4.setText("direccionGeneral");
+        txtDireccionGeneral4.setText("CALLE #12, 100 MTS DE LA IGLESIA TESTIGO DE JEHOVA");
         txtDireccionGeneral4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica4.add(txtDireccionGeneral4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 340, 30));
+        jPanel3_clinica4.add(txtDireccionGeneral4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 340, 30));
 
         jLabel_provincia4.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_provincia4.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_provincia4.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_provincia4.setText("Provincia:");
-        jPanel3_clinica4.add(jLabel_provincia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 90, 30));
+        jPanel3_clinica4.add(jLabel_provincia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 90, 30));
 
+        txtProvincia4.setEditable(false);
         txtProvincia4.setBackground(new java.awt.Color(231, 229, 218));
         txtProvincia4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtProvincia4.setForeground(new java.awt.Color(30, 29, 26));
+        txtProvincia4.setText("LIBERIA");
         txtProvincia4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica4.add(txtProvincia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 170, 30));
+        jPanel3_clinica4.add(txtProvincia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 100, 30));
 
         jLabel_canton4.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_canton4.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_canton4.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_canton4.setText("Canton:");
-        jPanel3_clinica4.add(jLabel_canton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 80, 30));
+        jPanel3_clinica4.add(jLabel_canton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 80, 30));
 
+        txtCanton4.setEditable(false);
         txtCanton4.setBackground(new java.awt.Color(231, 229, 218));
         txtCanton4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtCanton4.setForeground(new java.awt.Color(30, 29, 26));
+        txtCanton4.setText("GUANACASTE");
         txtCanton4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica4.add(txtCanton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 170, 30));
+        jPanel3_clinica4.add(txtCanton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 100, 30));
 
         jLabel_distrito4.setBackground(new java.awt.Color(169, 164, 160));
         jLabel_distrito4.setFont(new java.awt.Font("Microsoft YaHei", 1, 13)); // NOI18N
         jLabel_distrito4.setForeground(new java.awt.Color(30, 29, 26));
         jLabel_distrito4.setText("Distrito:");
-        jPanel3_clinica4.add(jLabel_distrito4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 80, 30));
+        jPanel3_clinica4.add(jLabel_distrito4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 80, 30));
 
+        txtDistrito4.setEditable(false);
         txtDistrito4.setBackground(new java.awt.Color(231, 229, 218));
         txtDistrito4.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         txtDistrito4.setForeground(new java.awt.Color(30, 29, 26));
+        txtDistrito4.setText("GUANACASTE");
         txtDistrito4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3_clinica4.add(txtDistrito4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 490, 170, 30));
+        jPanel3_clinica4.add(txtDistrito4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 110, 30));
+
+        jButton10.setText("Atras");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        jPanel3_clinica4.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, -1, -1));
 
         jPanel_Central.add(jPanel3_clinica4, "card15");
 
@@ -3901,7 +4108,7 @@ public class MainWindow extends javax.swing.JFrame {
         jComboBox_nombrePadecimiento.setBackground(new java.awt.Color(231, 229, 218));
         jComboBox_nombrePadecimiento.setFont(new java.awt.Font("Microsoft YaHei", 0, 13)); // NOI18N
         jComboBox_nombrePadecimiento.setForeground(new java.awt.Color(30, 29, 26));
-        jComboBox_nombrePadecimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" }));
+        jComboBox_nombrePadecimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DOLOR", "OBESIDAD", "IRRITACION EN LA PIEL", "INFECCION", "PERDIDA DE VISION", "CANCER" }));
         jComboBox_nombrePadecimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_nombrePadecimientoActionPerformed(evt);
@@ -3919,6 +4126,12 @@ public class MainWindow extends javax.swing.JFrame {
         txtdescrptionPadecimiento.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         txtdescrptionPadecimiento.setForeground(new java.awt.Color(30, 29, 26));
         txtdescrptionPadecimiento.setRows(5);
+        txtdescrptionPadecimiento.setText("Describa su padecimiento");
+        txtdescrptionPadecimiento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtdescrptionPadecimientoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(txtdescrptionPadecimiento);
 
         jPanel1_RegistroUsuarios.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, 240, 90));
@@ -3997,7 +4210,7 @@ public class MainWindow extends javax.swing.JFrame {
         jComboBox_tipoPadecimiento1.setBackground(new java.awt.Color(231, 229, 218));
         jComboBox_tipoPadecimiento1.setFont(new java.awt.Font("Microsoft YaHei", 0, 13)); // NOI18N
         jComboBox_tipoPadecimiento1.setForeground(new java.awt.Color(30, 29, 26));
-        jComboBox_tipoPadecimiento1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" }));
+        jComboBox_tipoPadecimiento1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CARDIOLOGIA", "RESPIRATORIO", "DERMATOLOGIA", "NUTRICION", "CIRUGIA", "OFTALMOLOGIA", " " }));
         jComboBox_tipoPadecimiento1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_tipoPadecimiento1ActionPerformed(evt);
@@ -4014,33 +4227,28 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnProcedimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcedimientoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnProcedimientoActionPerformed
-
-    private void btnPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPacienteActionPerformed
-
     private void btnMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedicoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnMedicoActionPerformed
 
     private void btnClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClinicaActionPerformed
-        // TODO add your handling code here:
+        jPanel3_filtroClinica.setVisible(true);
     }//GEN-LAST:event_btnClinicaActionPerformed
 
     private void btnCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCitaActionPerformed
-        // TODO add your handling code here:
+        Calendario calendario = new Calendario();
+        calendario.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnCitaActionPerformed
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
-        // TODO add your handling code here:
+
+
     }//GEN-LAST:event_btnRegistroActionPerformed
 
     private void mouseclicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseclicked
 
-        //Panel Slider 
+        Panel Slide;
         if (evt.getSource() == btnRegistro) {
             jPanel1_RegistroUsuarios.setVisible(true);
             jPanel2_filtroMedico.setVisible(false);
@@ -4068,26 +4276,6 @@ public class MainWindow extends javax.swing.JFrame {
             jPanel3_filtroClinica.setVisible(true);
             jPanel4.setVisible(false);
             jPanel5.setVisible(false);
-            jPanel6.setVisible(false);
-        }
-
-        if (evt.getSource() == btnProcedimiento) {
-            jPanel1_RegistroUsuarios.setVisible(false);
-            jPanel2_filtroMedico.setVisible(false);
-            jPanel2_medico1.setVisible(false);
-            jPanel3_filtroClinica.setVisible(false);
-            jPanel4.setVisible(true);
-            jPanel5.setVisible(false);
-            jPanel6.setVisible(false);
-        }
-
-        if (evt.getSource() == btnPaciente) {
-            jPanel1_RegistroUsuarios.setVisible(false);
-            jPanel2_filtroMedico.setVisible(false);
-            jPanel2_medico1.setVisible(false);
-            jPanel3_filtroClinica.setVisible(false);
-            jPanel4.setVisible(false);
-            jPanel5.setVisible(true);
             jPanel6.setVisible(false);
         }
 
@@ -4161,30 +4349,34 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEspecialidad4ActionPerformed
 
     private void jButton_VisualizarMedico2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VisualizarMedico2ActionPerformed
-        // TODO add your handling code here:
-        jPanel2_filtroMedico.setVisible(false);
-        jPanel2_medico1.setVisible(false);
+
         jPanel2_medico2.setVisible(true);
-        jPanel2_medico3.setVisible(false);
+        jPanel2_medico1.setVisible(false);
         jPanel2_medico4.setVisible(false);
+        jPanel2_medico3.setVisible(false);
+        jPanel2_filtroMedico.setVisible(false);
+
     }//GEN-LAST:event_jButton_VisualizarMedico2ActionPerformed
 
     private void jButton_VisualizarMedico3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VisualizarMedico3ActionPerformed
         // TODO add your handling code here:
-        jPanel2_filtroMedico.setVisible(false);
+
+        jPanel2_medico4.setVisible(false);
         jPanel2_medico1.setVisible(false);
         jPanel2_medico2.setVisible(false);
         jPanel2_medico3.setVisible(true);
-        jPanel2_medico4.setVisible(false);
+        jPanel2_filtroMedico.setVisible(false);
+
     }//GEN-LAST:event_jButton_VisualizarMedico3ActionPerformed
 
     private void jButton_VisualizarMedico4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VisualizarMedico4ActionPerformed
         // TODO add your handling code here:
-        jPanel2_filtroMedico.setVisible(false);
+
+        jPanel2_medico4.setVisible(true);
         jPanel2_medico1.setVisible(false);
         jPanel2_medico2.setVisible(false);
         jPanel2_medico3.setVisible(false);
-        jPanel2_medico4.setVisible(true);
+        jPanel2_filtroMedico.setVisible(false);
     }//GEN-LAST:event_jButton_VisualizarMedico4ActionPerformed
 
     private void txtCedulaMedico2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaMedico2ActionPerformed
@@ -4277,11 +4469,13 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jButton_VisualizarClinica1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VisualizarClinica1ActionPerformed
         // TODO add your handling code here:
-        jPanel3_filtroClinica.setVisible(false);
+
         jPanel3_clinica1.setVisible(true);
+        jPanel3_filtroClinica.setVisible(false);
         jPanel3_clinica2.setVisible(false);
         jPanel3_clinica3.setVisible(false);
         jPanel3_clinica4.setVisible(false);
+
     }//GEN-LAST:event_jButton_VisualizarClinica1ActionPerformed
 
     private void txtnombreClinica1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreClinica1ActionPerformed
@@ -4314,17 +4508,20 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jButton_VisualizarClinica2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VisualizarClinica2ActionPerformed
         // TODO add your handling code here:
-        jPanel3_filtroClinica.setVisible(false);
+
         jPanel3_clinica1.setVisible(false);
+        jPanel3_filtroClinica.setVisible(false);
         jPanel3_clinica2.setVisible(true);
         jPanel3_clinica3.setVisible(false);
         jPanel3_clinica4.setVisible(false);
+
     }//GEN-LAST:event_jButton_VisualizarClinica2ActionPerformed
 
     private void jButton_VisualizarClinica3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VisualizarClinica3ActionPerformed
         // TODO add your handling code here:
-        jPanel3_filtroClinica.setVisible(false);
+
         jPanel3_clinica1.setVisible(false);
+        jPanel3_filtroClinica.setVisible(false);
         jPanel3_clinica2.setVisible(false);
         jPanel3_clinica3.setVisible(true);
         jPanel3_clinica4.setVisible(false);
@@ -4332,8 +4529,9 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jButton_VisualizarClinica4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VisualizarClinica4ActionPerformed
         // TODO add your handling code here:
-        jPanel3_filtroClinica.setVisible(false);
+
         jPanel3_clinica1.setVisible(false);
+        jPanel3_filtroClinica.setVisible(false);
         jPanel3_clinica2.setVisible(false);
         jPanel3_clinica3.setVisible(false);
         jPanel3_clinica4.setVisible(true);
@@ -4371,18 +4569,23 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_txtedadActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String a = txtNombre.toString();
+        Calendario setiar = new Calendario();
+        String a = txtNombre.getText();
         String b = txtApeliido.getText();
         String c = txtCedula1.getText();
         String e = txtCorreoElectronico.getText();
+        String f = txtdescrptionPadecimiento.getText();
 
-        ControlBotones.guardar(a, b, c, e);
-        ControlBotones.almacenarDatos();
+        Persona set = new Persona();
+        set.setName(" " + a);
 
+        txtdescrptionPadecimiento.setText(" ");
         txtNombre.setText(" ");
+        txtApeliido.setText(" ");
         txtCedula1.setText(" ");
         txtedad.setText(" ");
         txtCorreoElectronico.setText(" ");
+        JOptionPane.showMessageDialog(this, "SUS DATOS HAN SIDO GUARDADOS CON  EXITO");
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -4678,6 +4881,106 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox_tipoPadecimiento2ActionPerformed
 
+    private void txtdescrptionPadecimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtdescrptionPadecimientoMouseClicked
+        txtdescrptionPadecimiento.setText(" ");
+    }//GEN-LAST:event_txtdescrptionPadecimientoMouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        jPanel2_filtroMedico.setVisible(true);
+        jPanel2_Menu.setVisible(true);
+        jPanel2_medico2.setVisible(false);
+
+
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        jPanel2_filtroMedico.setVisible(true);
+        jPanel2_Menu.setVisible(true);
+        jPanel2_medico3.setVisible(false);
+
+
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        jPanel2_filtroMedico.setVisible(true);
+        jPanel2_Menu.setVisible(true);
+        jPanel2_medico4.setVisible(false);
+
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        jPanel2_filtroMedico.setVisible(true);
+        jPanel2_Menu.setVisible(true);
+        jPanel2_medico1.setVisible(false);
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        jPanel2_Menu.setVisible(true);
+        jPanel3_filtroClinica.setVisible(true);
+        jPanel3_clinica1.setVisible(false);
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        jPanel2_Menu.setVisible(true);
+        jPanel3_filtroClinica.setVisible(true);
+        jPanel3_clinica2.setVisible(false);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        jPanel2_Menu.setVisible(true);
+        jPanel3_filtroClinica.setVisible(true);
+        jPanel3_clinica3.setVisible(false);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        jPanel2_Menu.setVisible(true);
+        jPanel3_filtroClinica.setVisible(true);
+        jPanel3_clinica4.setVisible(false);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        Funcionalidades estrella = new Funcionalidades();
+        estrella.calificacion();
+
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        Funcionalidades estrella1 = new Funcionalidades();
+        estrella1.calificacion();
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        Funcionalidades estrella2 = new Funcionalidades();
+        estrella2.calificacion();
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        Funcionalidades estrella3 = new Funcionalidades();
+        estrella3.calificacion();
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        Funcionalidades correo = new Funcionalidades();
+        correo.auto_email();
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        Funcionalidades correo1 = new Funcionalidades();
+        correo1.auto_email();
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+      Funcionalidades correo2 = new Funcionalidades();
+        correo2.auto_email();
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        Funcionalidades correo3 = new Funcionalidades();
+        correo3.auto_email();
+    }//GEN-LAST:event_jButton18ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4724,16 +5027,30 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnClinica1;
     private javax.swing.JButton btnMedico;
     private javax.swing.JButton btnMedico1;
-    private javax.swing.JButton btnPaciente;
     private javax.swing.JButton btnPaciente1;
-    private javax.swing.JButton btnProcedimiento;
     private javax.swing.JButton btnProcedimiento1;
     private javax.swing.JButton btnRegistro;
     private javax.swing.JButton btnRegistro1;
     private javax.swing.JLabel ibiFoto;
     private javax.swing.JLabel ibiFoto1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JButton jButton_VisualizarClinica1;
     private javax.swing.JButton jButton_VisualizarClinica2;
     private javax.swing.JButton jButton_VisualizarClinica3;
@@ -4750,9 +5067,9 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton jButton_VisualizarMedico6;
     private javax.swing.JButton jButton_VisualizarMedico7;
     private javax.swing.JButton jButton_VisualizarMedico8;
-    private javax.swing.JComboBox<String> jComboBox_nombrePadecimiento;
+    public javax.swing.JComboBox<String> jComboBox_nombrePadecimiento;
     public javax.swing.JComboBox<String> jComboBox_nombrePadecimiento1;
-    private javax.swing.JComboBox<String> jComboBox_tipoPadecimiento1;
+    public javax.swing.JComboBox<String> jComboBox_tipoPadecimiento1;
     public javax.swing.JComboBox<String> jComboBox_tipoPadecimiento2;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
@@ -4777,8 +5094,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -4813,7 +5128,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_InfoPersonal1;
     private javax.swing.JLabel jLabel_Menu;
     private javax.swing.JLabel jLabel_Menu1;
-    private javax.swing.JLabel jLabel_NombrePadecimiento;
+    public javax.swing.JLabel jLabel_NombrePadecimiento;
     public javax.swing.JLabel jLabel_NombrePadecimiento1;
     private javax.swing.JLabel jLabel_RegistroMedicos;
     private javax.swing.JLabel jLabel_RegistroMedicos1;
@@ -4833,7 +5148,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_correoElectronico1;
     private javax.swing.JLabel jLabel_correoElectronico2;
     private javax.swing.JLabel jLabel_correoElectronico3;
-    private javax.swing.JLabel jLabel_descripPadecimiento;
+    public javax.swing.JLabel jLabel_descripPadecimiento;
     public javax.swing.JLabel jLabel_descripPadecimiento1;
     private javax.swing.JLabel jLabel_direccion1;
     private javax.swing.JLabel jLabel_direccion2;
@@ -4905,7 +5220,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_provincia6;
     private javax.swing.JLabel jLabel_provincia7;
     private javax.swing.JLabel jLabel_provincia8;
-    private javax.swing.JLabel jLabel_tipoPadecimiento;
+    public javax.swing.JLabel jLabel_tipoPadecimiento;
     public javax.swing.JLabel jLabel_tipoPadecimiento1;
     private javax.swing.JPanel jPanel1_Base;
     private javax.swing.JPanel jPanel1_Base1;
@@ -5113,7 +5428,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextField txtUniversidadEstudio6;
     private javax.swing.JTextField txtUniversidadEstudio7;
     private javax.swing.JTextField txtUniversidadEstudio8;
-    private javax.swing.JTextArea txtdescrptionPadecimiento;
+    public javax.swing.JTextArea txtdescrptionPadecimiento;
     public javax.swing.JTextArea txtdescrptionPadecimiento1;
     private javax.swing.JTextField txtedad;
     private javax.swing.JTextField txtedad1;

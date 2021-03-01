@@ -14,9 +14,9 @@ public class ControlBotones {
 
     public static void almacenarDatos() {
         formulario = new MainWindow();
-        persona = new Persona[100]; // AREGLO ALMACENARA LA INFORMACION DE LOS USUARIOS QUE SE REGISTREN
+        persona = new Persona[10]; // AREGLO ALMACENARA LA INFORMACION DE LOS USUARIOS QUE SE REGISTREN
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             persona[i] = new Persona();
 
         }

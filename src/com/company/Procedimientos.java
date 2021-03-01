@@ -1,13 +1,14 @@
 package com.company;
-
+ // CLASE DE PROCEDIMIENTOS
 import java.util.ArrayList;
 
 public class Procedimientos {
-
+//ATRIBUTOS
     String nombre;
     double costo;
     ArrayList<Procedimientos> listaProcedimientos = new ArrayList<>();
 
+    // METODO CONSTRUCTOR
     public Procedimientos(String nombre, double costo) {
         this.nombre = nombre;
         this.costo = costo;

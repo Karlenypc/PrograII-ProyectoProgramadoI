@@ -5,10 +5,7 @@
  */
 package View;
 
-/**
- *
- * @author pimie
- */
+// CLASE DONDE SE REALIZA LA CARGA DE IMAGEN DE USUARIO
 public class CargarFoto extends javax.swing.JFrame {
 
     /**

@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
-
+// CLASE DE REGISTRO DE CLINICAS, NO ESTA EN USO
 public class Clinica {
 
     private String nombre;

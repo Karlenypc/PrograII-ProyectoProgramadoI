@@ -7,10 +7,7 @@ package com.company;
 
 import java.util.Vector;
 
-/**
- *
- * @author pimie
- */
+// CLASE USUARIO DONDE SE REGISTRAN LOS URUARIOS 
 public class ListaUsuario {
 
     public static Vector<Usuario> datos = new Vector<Usuario>();
